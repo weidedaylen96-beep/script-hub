@@ -5,199 +5,286 @@
 
 <title>Download Hub</title>
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
 <style>
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    text-align: center;
 
-    background-image:
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+
+    margin:0;
+    font-family: Arial, sans-serif;
+
+    background:
     linear-gradient(
-        rgba(0,0,0,0.55),
-        rgba(0,0,0,0.55)
+    rgba(15,23,42,0.75),
+    rgba(15,23,42,0.75)
     ),
     url("https://images.unsplash.com/photo-1518770660439-4636190af475");
 
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-}
-
-
-/* Animaties */
-
-@keyframes verschijnen {
-
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-}
-
-
-@keyframes zweven {
-
-    0% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-10px);
-    }
-
-    100% {
-        transform: translateY(0);
-    }
-
-}
-
-
-
-/* Banner */
-
-.banner {
+    background-size:cover;
+    background-attachment:fixed;
 
     color:white;
-    padding:90px 20px;
-    animation: verschijnen 1s ease;
 
 }
 
 
-.banner h1 {
-
-    font-size:60px;
-
-}
-
-
-.banner h2 {
-
-    font-size:30px;
-
-}
-
-
-.banner p {
-
-    font-size:20px;
-
-}
-
-
-
-/* Menu */
 
 nav {
 
-    background:white;
+    position:sticky;
+    top:0;
+
+    background:rgba(255,255,255,0.12);
+
+    backdrop-filter:blur(15px);
+
     padding:20px;
-    box-shadow:0 5px 20px black;
-    animation: verschijnen 1.2s ease;
+
+    text-align:center;
+
+    border-bottom:1px solid rgba(255,255,255,0.2);
 
 }
+
 
 
 nav a {
 
+    color:white;
+
     text-decoration:none;
+
     margin:10px;
-    color:#2563eb;
+
     font-weight:bold;
+
+    transition:0.3s;
 
 }
 
 
 
-/* Inhoud */
+nav a:hover {
+
+    color:#60a5fa;
+
+}
+
+
+
+
+
+.hero {
+
+    text-align:center;
+
+    padding:100px 20px;
+
+    animation: verschijnen 1s;
+
+}
+
+
+
+.hero h1 {
+
+    font-size:65px;
+
+    margin-bottom:10px;
+
+}
+
+
+
+.hero p {
+
+    font-size:22px;
+
+}
+
+
+
+.btn {
+
+    display:inline-block;
+
+    margin-top:30px;
+
+    padding:16px 35px;
+
+    background:#2563eb;
+
+    color:white;
+
+    border-radius:15px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    transition:0.3s;
+
+}
+
+
+
+.btn:hover {
+
+    transform:scale(1.1);
+
+    background:#3b82f6;
+
+}
+
+
+
+
 
 .container {
 
-    padding:50px;
+    max-width:1000px;
 
-}
-
-
-
-.card {
-
-    background:rgba(255,255,255,0.95);
-    max-width:700px;
     margin:auto;
-    padding:35px;
-    border-radius:25px;
-    box-shadow:0 10px 30px black;
-    animation:verschijnen 1.5s ease;
+
+    padding:40px 20px;
 
 }
 
 
 
 
-.features {
+
+.glass {
+
+    background:rgba(255,255,255,0.12);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:25px;
+
+    padding:35px;
+
+    margin:25px 0;
+
+    border:1px solid rgba(255,255,255,0.2);
+
+    animation:verschijnen 1.2s;
+
+}
+
+
+
+
+
+.cards {
 
     display:flex;
-    justify-content:center;
+
     gap:20px;
-    margin-top:40px;
+
+    justify-content:center;
+
     flex-wrap:wrap;
 
 }
 
 
 
-.feature {
 
-    background:white;
-    width:200px;
+.card {
+
+    width:250px;
+
+    background:rgba(255,255,255,0.15);
+
+    backdrop-filter:blur(10px);
+
     padding:25px;
+
     border-radius:20px;
-    box-shadow:0 10px 25px black;
-    animation:verschijnen 2s ease;
+
+    transition:0.3s;
 
 }
 
 
 
-.feature:hover {
+.card:hover {
 
-    animation:zweven 1s infinite;
+    transform:translateY(-10px);
+
+}
+
+
+
+
+footer {
+
+    text-align:center;
+
+    padding:30px;
+
+    background:rgba(0,0,0,0.3);
 
 }
 
 
 
 
-/* Knop */
+@keyframes verschijnen {
 
-.button {
+from {
 
-    display:inline-block;
-    margin-top:25px;
-    background:#2563eb;
-    color:white;
-    padding:15px 35px;
-    border-radius:15px;
-    text-decoration:bold;
-    font-weight:bold;
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+
+to {
+
+opacity:1;
+
+transform:translateY(0);
+
+}
 
 }
 
 
 
-.button:hover {
 
-    transform:scale(1.1);
-    background:#1d4ed8;
+
+@media(max-width:700px){
+
+
+.hero h1 {
+
+font-size:40px;
 
 }
+
+
+nav a {
+
+display:block;
+
+margin:15px;
+
+}
+
+
+}
+
 
 
 </style>
@@ -207,40 +294,19 @@ nav a {
 
 
 
+
 <body>
-
-
-
-<header class="banner">
-
-
-<h1>📦 Download Hub</h1>
-
-<h2>Vind handige bestanden op één plek</h2>
-
-<p>
-Snel zoeken • Makkelijk downloaden • Alles overzichtelijk 🚀
-</p>
-
-
-<a class="button" href="downloads.html">
-Bekijk downloads 📥
-</a>
-
-
-</header>
-
-
 
 
 
 <nav>
 
+
 <a href="index.html">🏠 Home</a>
 
 <a href="downloads.html">📦 Downloads</a>
 
-<a href="over.html">ℹ️ Over ons</a>
+<a href="over.html">ℹ️ Over</a>
 
 <a href="login.html">🔐 Login</a>
 
@@ -250,8 +316,31 @@ Bekijk downloads 📥
 
 <a href="contact.html">📩 Contact</a>
 
+
 </nav>
 
+
+
+
+
+<section class="hero">
+
+
+<h1>📦 Download Hub</h1>
+
+
+<p>
+De moderne plek voor bestanden, tools en downloads 🚀
+</p>
+
+
+
+<a class="btn" href="downloads.html">
+Bekijk downloads
+</a>
+
+
+</section>
 
 
 
@@ -260,15 +349,18 @@ Bekijk downloads 📥
 <div class="container">
 
 
-<div class="card">
+
+<div class="glass">
 
 
-<h2>Welkom bij Download Hub! 🎉</h2>
+<h2>Welkom 👋</h2>
 
 
 <p>
-De plek voor handige bestanden,
-scripts, games en tools.
+
+Download handige bestanden snel en makkelijk.
+Alles overzichtelijk op één plek.
+
 </p>
 
 
@@ -278,55 +370,85 @@ scripts, games en tools.
 
 
 
-<div class="features">
 
 
-<div class="feature">
-
-<h1>🔍</h1>
-
-<p>Snel zoeken</p>
-
-</div>
-
-
-
-<div class="feature">
-
-<h1>📂</h1>
-
-<p>Categorieën</p>
-
-</div>
+<h2 style="text-align:center;">
+Waarom Download Hub?
+</h2>
 
 
 
 
-<div class="feature">
 
-<h1>⚡</h1>
+<div class="cards">
 
-<p>Snel downloaden</p>
+
+
+<div class="card">
+
+<h2>⚡</h2>
+
+<h3>Snel</h3>
+
+<p>
+Snelle downloads zonder gedoe.
+</p>
 
 </div>
 
 
 
 
-<div class="feature">
 
-<h1>📩</h1>
+<div class="card">
 
-<p>Contact</p>
+<h2>📂</h2>
+
+<h3>Overzichtelijk</h3>
+
+<p>
+Alles netjes verdeeld in categorieën.
+</p>
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h2>🔒</h2>
+
+<h3>Veilig</h3>
+
+<p>
+Een eigen plek voor jouw bestanden.
+</p>
 
 </div>
 
 
+
+
 </div>
 
 
 
 </div>
+
+
+
+
+
+<footer>
+
+<p>
+© 2026 Download Hub • Alle rechten voorbehouden
+</p>
+
+
+</footer>
 
 
 
