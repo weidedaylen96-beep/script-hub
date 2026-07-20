@@ -12,16 +12,14 @@
 
 *{
 box-sizing:border-box;
-font-family:Arial, sans-serif;
+font-family:Arial,sans-serif;
 }
 
 
 body{
 
 margin:0;
-
 background:#020617;
-
 color:white;
 
 overflow-x:hidden;
@@ -29,7 +27,7 @@ overflow-x:hidden;
 }
 
 
-/* Achtergrond effecten */
+/* Achtergrond */
 
 body:before{
 
@@ -38,7 +36,6 @@ content:"";
 position:fixed;
 
 width:500px;
-
 height:500px;
 
 background:#2563eb;
@@ -46,10 +43,11 @@ background:#2563eb;
 filter:blur(160px);
 
 top:-150px;
-
 left:-150px;
 
 opacity:.5;
+
+z-index:-1;
 
 }
 
@@ -62,7 +60,6 @@ content:"";
 position:fixed;
 
 width:500px;
-
 height:500px;
 
 background:#9333ea;
@@ -70,14 +67,13 @@ background:#9333ea;
 filter:blur(160px);
 
 bottom:-150px;
-
 right:-150px;
 
 opacity:.5;
 
+z-index:-1;
+
 }
-
-
 
 
 
@@ -118,7 +114,7 @@ color:white;
 
 text-decoration:none;
 
-margin:12px;
+margin:10px;
 
 font-weight:bold;
 
@@ -145,9 +141,9 @@ height:100vh;
 
 display:flex;
 
-justify-content:center;
-
 align-items:center;
+
+justify-content:center;
 
 text-align:center;
 
@@ -157,56 +153,17 @@ padding:30px;
 
 
 
-
-
-/* LOGO */
-
-
 .logo{
 
-animation:float 3s infinite alternate;
+font-size:90px;
 
 }
 
 
 
-.logo-icon{
-
-width:100px;
-
-height:100px;
-
-margin:auto;
-
-border-radius:30px;
-
-background:linear-gradient(
-135deg,
-#2563eb,
-#9333ea
-);
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-font-size:55px;
-
-box-shadow:
-
-0 0 40px #2563eb;
-
-}
-
-
-
-.logo h1{
+h1{
 
 font-size:75px;
-
-margin:20px 0;
 
 background:linear-gradient(
 90deg,
@@ -223,31 +180,11 @@ color:transparent;
 
 
 
-.logo p{
+p{
 
-font-size:24px;
+font-size:22px;
 
 color:#cbd5e1;
-
-}
-
-
-
-
-
-@keyframes float{
-
-from{
-
-transform:translateY(0);
-
-}
-
-to{
-
-transform:translateY(-15px);
-
-}
 
 }
 
@@ -259,7 +196,7 @@ transform:translateY(-15px);
 
 display:inline-block;
 
-margin-top:35px;
+margin-top:30px;
 
 padding:18px 45px;
 
@@ -277,23 +214,10 @@ text-decoration:none;
 
 font-weight:bold;
 
-transition:.3s;
-
 }
 
 
 
-.button:hover{
-
-transform:scale(1.1);
-
-}
-
-
-
-
-
-/* Kaarten */
 
 
 .section{
@@ -302,9 +226,10 @@ max-width:1100px;
 
 margin:auto;
 
-padding:50px 20px;
+padding:40px 20px;
 
 }
+
 
 
 
@@ -319,11 +244,7 @@ padding:40px;
 
 border-radius:30px;
 
-border:1px solid rgba(255,255,255,.15);
-
 }
-
-
 
 
 
@@ -341,7 +262,6 @@ flex-wrap:wrap;
 
 
 
-
 .card{
 
 width:280px;
@@ -352,27 +272,9 @@ padding:30px;
 
 border-radius:25px;
 
-transition:.3s;
+text-align:center;
 
 }
-
-
-
-.card:hover{
-
-transform:translateY(-15px);
-
-}
-
-
-
-
-.icon{
-
-font-size:45px;
-
-}
-
 
 
 
@@ -389,11 +291,9 @@ color:#94a3b8;
 
 
 
-
-
 @media(max-width:700px){
 
-.logo h1{
+h1{
 
 font-size:45px;
 
@@ -413,29 +313,29 @@ margin:10px;
 
 </style>
 
-
 </head>
+
 
 
 <body>
 
 
 
-
 <nav>
 
-<a href="index.html">Home</a>
+<a href="index.html">🏠 Home</a>
 
-<a href="downloads.html">Downloads</a>
+<a href="downloads.html">📦 Downloads</a>
 
-<a href="shop.html">Shop</a>
+<a href="shop.html">🛒 Shop</a>
 
-<a href="contact.html">Contact</a>
+<a href="contact.html">📩 Contact</a>
 
-<a href="login.html">Login</a>
+<a href="login.html">🔐 Login</a>
+
+<a href="admin.html">👑 Admin</a>
 
 </nav>
-
 
 
 
@@ -445,36 +345,27 @@ margin:10px;
 <section class="hero">
 
 
+<div>
+
+
 <div class="logo">
-
-
-<div class="logo-icon">
-
 ⬇
-
 </div>
 
 
-
 <h1>
-
 Download Hub
-
 </h1>
 
 
-
 <p>
-
-Premium platform voor digitale downloads, scripts en tools.
-
+Premium platform voor scripts, tools en downloads 🚀
 </p>
-
 
 
 <a class="button" href="downloads.html">
 
-Bekijk Downloads 🚀
+Bekijk Downloads
 
 </a>
 
@@ -483,9 +374,6 @@ Bekijk Downloads 🚀
 
 
 </section>
-
-
-
 
 
 
@@ -503,13 +391,13 @@ Waarom Download Hub?
 </h2>
 
 
-<div class="cards">
 
+<div class="cards">
 
 
 <div class="card">
 
-<div class="icon">⚡</div>
+<h2>⚡</h2>
 
 <h3>Snel</h3>
 
@@ -524,12 +412,12 @@ Direct toegang tot bestanden.
 
 <div class="card">
 
-<div class="icon">🛡️</div>
+<h2>🛡️</h2>
 
-<h3>Betrouwbaar</h3>
+<h3>Veilig</h3>
 
 <p>
-Een moderne en overzichtelijke omgeving.
+Overzichtelijke downloads.
 </p>
 
 </div>
@@ -537,14 +425,15 @@ Een moderne en overzichtelijke omgeving.
 
 
 
+
 <div class="card">
 
-<div class="icon">🚀</div>
+<h2>🚀</h2>
 
-<h3>Professioneel</h3>
+<h3>Modern</h3>
 
 <p>
-Gebouwd als een echt digitaal platform.
+Gebouwd als een professioneel platform.
 </p>
 
 </div>
@@ -567,18 +456,16 @@ Gebouwd als een echt digitaal platform.
 
 <footer>
 
-<h3>⬇ Download Hub</h3>
+<h3>
+⬇ Download Hub
+</h3>
 
 <p>
 Premium Digital Platform
 </p>
 
-<p>
-© 2026 Download Hub
-</p>
 
 </footer>
-
 
 
 
