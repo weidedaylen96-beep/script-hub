@@ -3,7 +3,7 @@
 
 <head>
 
-<title>Avatar Creator Shop</title>
+<title>Download Hub Premium Shop</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -11,42 +11,103 @@
 <style>
 
 *{
+margin:0;
+padding:0;
 box-sizing:border-box;
 font-family:Arial,sans-serif;
 }
 
+
 body{
 
-margin:0;
+background:#020617;
 
 color:white;
 
-background:
-linear-gradient(
-rgba(2,6,23,.85),
-rgba(2,6,23,.95)
-),
-url("https://images.unsplash.com/photo-1542751371-adc38448a05e");
-
-background-size:cover;
-
-background-attachment:fixed;
+overflow-x:hidden;
 
 }
 
+
+
+/* achtergrond */
+
+body:before{
+
+content:"";
+
+position:fixed;
+
+width:700px;
+
+height:700px;
+
+background:#2563eb;
+
+filter:blur(200px);
+
+top:-300px;
+
+left:-300px;
+
+z-index:-1;
+
+}
+
+
+body:after{
+
+content:"";
+
+position:fixed;
+
+width:700px;
+
+height:700px;
+
+background:#9333ea;
+
+filter:blur(200px);
+
+bottom:-300px;
+
+right:-300px;
+
+z-index:-1;
+
+}
+
+
+
+/* menu */
 
 
 nav{
 
-padding:20px;
+position:fixed;
 
-text-align:center;
+top:20px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+width:90%;
+
+padding:20px;
 
 background:rgba(255,255,255,.1);
 
-backdrop-filter:blur(20px);
+backdrop-filter:blur(25px);
+
+border-radius:30px;
+
+text-align:center;
+
+z-index:10;
 
 }
+
 
 
 nav a{
@@ -63,27 +124,122 @@ font-weight:bold;
 
 
 
-h1{
+nav a:hover{
+
+color:#38bdf8;
+
+}
+
+
+
+
+
+/* titel */
+
+
+.hero{
+
+padding-top:150px;
 
 text-align:center;
 
-font-size:60px;
+}
+
+
+
+h1{
+
+font-size:75px;
 
 background:linear-gradient(
 90deg,
-#60a5fa,
-#c084fc,
-#f472b6
+#38bdf8,
+#a855f7,
+#facc15
 );
 
 -webkit-background-clip:text;
 
 color:transparent;
 
-padding:30px;
+}
+
+
+
+.hero p{
+
+font-size:25px;
+
+color:#cbd5e1;
 
 }
 
+
+
+
+
+/* zoeken */
+
+
+.search{
+
+margin:40px auto;
+
+max-width:600px;
+
+}
+
+
+
+input{
+
+width:100%;
+
+padding:18px;
+
+border-radius:30px;
+
+border:none;
+
+font-size:18px;
+
+}
+
+
+
+
+.categories{
+
+text-align:center;
+
+margin:30px;
+
+}
+
+
+
+.categories button{
+
+padding:12px 25px;
+
+margin:8px;
+
+border-radius:30px;
+
+border:none;
+
+background:#1e293b;
+
+color:white;
+
+cursor:pointer;
+
+}
+
+
+
+
+/* shop */
 
 
 .shop{
@@ -96,51 +252,88 @@ padding:30px;
 
 display:grid;
 
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:
+repeat(auto-fit,minmax(260px,1fr));
 
-gap:25px;
-
-}
-
-
-
-.card{
-
-background:rgba(255,255,255,.1);
-
-border-radius:25px;
-
-padding:20px;
-
-backdrop-filter:blur(20px);
-
-border:1px solid rgba(255,255,255,.2);
-
-transition:.3s;
+gap:30px;
 
 }
 
 
 
-.card:hover{
 
-transform:translateY(-10px);
+
+.product{
+
+background:
+
+rgba(255,255,255,.1);
+
+backdrop-filter:blur(25px);
+
+border-radius:35px;
+
+padding:25px;
+
+border:1px solid rgba(255,255,255,.15);
+
+transition:.5s;
+
+position:relative;
 
 }
 
 
 
-.card img{
+.product:hover{
+
+transform:
+
+translateY(-15px)
+
+rotateX(8deg);
+
+box-shadow:
+
+0 30px 60px black;
+
+}
+
+
+
+
+.product img{
 
 width:100%;
 
-height:220px;
+height:230px;
 
 object-fit:cover;
 
+border-radius:25px;
+
+}
+
+
+
+
+.badge{
+
+position:absolute;
+
+top:20px;
+
+left:20px;
+
+background:#facc15;
+
+color:black;
+
+padding:8px 15px;
+
 border-radius:20px;
 
-background:#111827;
+font-weight:bold;
 
 }
 
@@ -148,11 +341,13 @@ background:#111827;
 
 .price{
 
-font-size:25px;
+font-size:32px;
 
-color:#60a5fa;
+color:#38bdf8;
 
 font-weight:bold;
+
+margin:15px 0;
 
 }
 
@@ -162,24 +357,103 @@ font-weight:bold;
 
 display:block;
 
-background:white;
+padding:15px;
 
-color:black;
+background:
 
-padding:14px;
+linear-gradient(
+90deg,
+#2563eb,
+#9333ea
+);
 
-border-radius:20px;
+border-radius:30px;
 
 text-align:center;
+
+color:white;
 
 text-decoration:none;
 
 font-weight:bold;
 
-margin-top:15px;
+}
+
+
+
+.star{
+
+position:absolute;
+
+right:20px;
+
+top:20px;
+
+font-size:25px;
+
+cursor:pointer;
 
 }
 
+
+
+
+.cart{
+
+position:fixed;
+
+right:25px;
+
+bottom:25px;
+
+background:#9333ea;
+
+padding:20px;
+
+border-radius:30px;
+
+font-weight:bold;
+
+}
+
+
+
+
+
+footer{
+
+text-align:center;
+
+padding:50px;
+
+color:#94a3b8;
+
+}
+
+
+
+
+@media(max-width:700px){
+
+
+h1{
+
+font-size:45px;
+
+}
+
+
+nav a{
+
+display:block;
+
+margin:8px;
+
+}
+
+
+
+}
 
 
 </style>
@@ -190,79 +464,197 @@ margin-top:15px;
 <body>
 
 
+
+
+
 <nav>
 
 <a href="index.html">🏠 Home</a>
 
 <a href="shop.html">🛒 Shop</a>
 
-<a href="downloads.html">📦 Downloads</a>
+<a href="login.html">🔐 Login</a>
 
 <a href="admin.html">👑 Admin</a>
 
 </nav>
 
 
+
+
+
+
+
+<div class="hero">
+
+
 <h1>
-🎮 Avatar Creator Marketplace
+🛒 Premium Shop
 </h1>
 
 
+<p>
+Ontdek unieke creator producten
+</p>
 
-<div class="shop" id="shop"></div>
+
+
+<div class="search">
+
+<input placeholder="🔍 Zoek producten...">
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="categories">
+
+<button>🔥 Trending</button>
+
+<button>🎮 Gaming</button>
+
+<button>💎 Premium</button>
+
+<button>🚀 New</button>
+
+</div>
+
+
+
+
+
+
+
+
+<div class="shop">
 
 
 
 <script>
 
 
-let shop = document.getElementById("shop");
+let producten=[
+
+"Neon Warrior",
+"Cyber Creator",
+"Galaxy Pack",
+"Ultimate Bundle",
+"Shadow Design",
+"Future Avatar",
+"Gold Edition",
+"Pro Creator",
+"Speed Pack",
+"Legend Collection"
+
+];
 
 
 
-for(let i = 1; i <= 49; i++){
+producten.forEach((naam,index)=>{
 
 
-shop.innerHTML += `
+document.write(`
 
 
-<div class="card">
+<div class="product">
 
 
-<img src="images/avatar${i}.png" 
-alt="Avatar ${i}">
+<div class="badge">
+${index%2?"NEW":"HOT"}
+</div>
+
+
+<div class="star">
+⭐
+</div>
+
+
+<img src="https://picsum.photos/500/400?random=${index}">
+
 
 
 <h2>
-🎮 Avatar Design #${i}
+${naam}
 </h2>
 
 
+
 <p>
-Premium gaming avatar design.
+Premium gaming creator item.
 </p>
 
 
+
 <div class="price">
-€${(i%9)+1},99
+
+€${index+2},99
+
 </div>
 
 
-<a class="buy" href="contact.html">
-🛒 Kopen
+
+<a class="buy" href="#">
+
+🛒 Toevoegen
+
 </a>
 
 
+
 </div>
 
 
-`;
+`);
 
 
-}
+});
 
 
 </script>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="cart">
+
+🛒 Winkelwagen: 0
+
+</div>
+
+
+
+
+
+
+
+<footer>
+
+<h2>
+🎮 Download Hub
+</h2>
+
+<p>
+Ultimate Gaming Marketplace
+</p>
+
+
+</footer>
 
 
 
