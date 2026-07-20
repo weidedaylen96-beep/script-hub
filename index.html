@@ -3,7 +3,7 @@
 
 <head>
 
-<title>Download Hub | Premium Marketplace</title>
+<title>Download Hub | Premium Creator Platform</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -29,23 +29,74 @@ overflow-x:hidden;
 }
 
 
-/* BACKGROUND */
 
-.bg{
+/* bewegende achtergrond */
+
+body:before{
+
+content:"";
 
 position:fixed;
 
-inset:0;
+width:600px;
+
+height:600px;
+
+background:#2563eb;
+
+filter:blur(180px);
+
+top:-200px;
+
+left:-200px;
+
+animation:move 8s infinite alternate;
 
 z-index:-1;
 
-background:
+}
 
-radial-gradient(circle at top left,#2563eb55,transparent 40%),
 
-radial-gradient(circle at bottom right,#9333ea55,transparent 40%),
 
-linear-gradient(135deg,#020617,#111827);
+body:after{
+
+content:"";
+
+position:fixed;
+
+width:600px;
+
+height:600px;
+
+background:#9333ea;
+
+filter:blur(180px);
+
+bottom:-200px;
+
+right:-200px;
+
+animation:move 10s infinite alternate;
+
+z-index:-1;
+
+}
+
+
+
+@keyframes move{
+
+from{
+
+transform:translate(0);
+
+}
+
+to{
+
+transform:translate(100px,80px);
+
+}
 
 }
 
@@ -53,7 +104,7 @@ linear-gradient(135deg,#020617,#111827);
 
 
 
-/* NAV */
+/* MENU */
 
 
 nav{
@@ -70,23 +121,23 @@ width:90%;
 
 max-width:1200px;
 
-padding:18px;
-
 background:rgba(255,255,255,.08);
 
-backdrop-filter:blur(20px);
+backdrop-filter:blur(25px);
 
 border:1px solid rgba(255,255,255,.15);
 
-border-radius:25px;
+border-radius:30px;
+
+padding:18px;
 
 display:flex;
 
 justify-content:center;
 
-gap:20px;
+gap:25px;
 
-z-index:20;
+z-index:10;
 
 }
 
@@ -110,7 +161,10 @@ nav a:hover{
 
 color:#60a5fa;
 
+transform:scale(1.1);
+
 }
+
 
 
 
@@ -120,17 +174,17 @@ color:#60a5fa;
 
 .hero{
 
-min-height:100vh;
+height:100vh;
 
 display:flex;
 
-align-items:center;
-
 justify-content:center;
+
+align-items:center;
 
 text-align:center;
 
-padding:120px 20px 50px;
+padding:30px;
 
 }
 
@@ -138,7 +192,7 @@ padding:120px 20px 50px;
 
 .logo{
 
-font-size:90px;
+font-size:100px;
 
 animation:float 3s infinite alternate;
 
@@ -156,22 +210,21 @@ transform:translateY(0);
 
 to{
 
-transform:translateY(-15px);
+transform:translateY(-20px);
 
 }
 
 }
-
 
 
 
 h1{
 
-font-size:80px;
+font-size:85px;
 
 background:linear-gradient(
 90deg,
-#60a5fa,
+#38bdf8,
 #a78bfa,
 #f472b6
 );
@@ -190,7 +243,7 @@ font-size:25px;
 
 color:#cbd5e1;
 
-margin-top:20px;
+margin-top:25px;
 
 }
 
@@ -209,7 +262,7 @@ margin-top:40px;
 
 display:inline-block;
 
-padding:18px 40px;
+padding:18px 45px;
 
 margin:10px;
 
@@ -219,25 +272,13 @@ text-decoration:none;
 
 font-weight:bold;
 
-background:white;
-
-color:#020617;
-
 transition:.3s;
 
 }
 
 
 
-.btn:hover{
-
-transform:scale(1.08);
-
-}
-
-
-
-.primary{
+.main{
 
 background:linear-gradient(
 90deg,
@@ -251,35 +292,58 @@ color:white;
 
 
 
+.second{
 
-/* SECTIES */
+background:white;
+
+color:#020617;
+
+}
 
 
-section{
+
+.btn:hover{
+
+transform:scale(1.1);
+
+box-shadow:0 0 30px #2563eb;
+
+}
+
+
+
+
+
+/* secties */
+
+
+.section{
 
 max-width:1200px;
 
 margin:auto;
 
-padding:50px 20px;
+padding:70px 20px;
 
 }
 
 
 
-.glass{
+
+.box{
 
 background:rgba(255,255,255,.08);
 
-backdrop-filter:blur(20px);
+backdrop-filter:blur(25px);
+
+border-radius:40px;
+
+padding:50px;
 
 border:1px solid rgba(255,255,255,.15);
 
-border-radius:35px;
-
-padding:40px;
-
 }
+
 
 
 
@@ -294,6 +358,8 @@ flex-wrap:wrap;
 
 justify-content:center;
 
+margin-top:30px;
+
 }
 
 
@@ -302,13 +368,13 @@ justify-content:center;
 
 width:300px;
 
-padding:30px;
-
-border-radius:25px;
-
 background:rgba(255,255,255,.08);
 
-transition:.3s;
+padding:35px;
+
+border-radius:30px;
+
+transition:.4s;
 
 }
 
@@ -316,31 +382,50 @@ transition:.3s;
 
 .card:hover{
 
-transform:translateY(-10px);
+transform:translateY(-15px);
+
+background:rgba(255,255,255,.15);
 
 }
-
-
 
 
 
 .icon{
 
-font-size:50px;
+font-size:55px;
 
 }
 
 
 
 
-/* LOGIN */
+
+/* producten */
 
 
-.login-box{
+.products{
 
-max-width:400px;
+display:flex;
 
-margin:auto;
+gap:25px;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+
+
+.product{
+
+width:280px;
+
+padding:25px;
+
+background:rgba(255,255,255,.1);
+
+border-radius:30px;
 
 text-align:center;
 
@@ -348,17 +433,38 @@ text-align:center;
 
 
 
-input{
+.product img{
 
 width:100%;
 
-padding:15px;
+border-radius:20px;
 
-margin:10px;
+}
 
-border-radius:15px;
 
-border:none;
+
+.price{
+
+font-size:30px;
+
+color:#38bdf8;
+
+}
+
+
+
+
+
+/* reviews */
+
+
+.review{
+
+font-size:20px;
+
+color:#cbd5e1;
+
+margin:20px;
 
 }
 
@@ -370,7 +476,7 @@ footer{
 
 text-align:center;
 
-padding:40px;
+padding:60px;
 
 color:#94a3b8;
 
@@ -378,9 +484,6 @@ color:#94a3b8;
 
 
 
-
-
-/* TELEFOON */
 
 
 @media(max-width:700px){
@@ -403,7 +506,6 @@ font-size:45px;
 }
 
 
-
 .hero p{
 
 font-size:18px;
@@ -414,12 +516,12 @@ font-size:18px;
 
 .logo{
 
-font-size:60px;
+font-size:70px;
 
 }
 
 
-.card{
+.card,.product{
 
 width:100%;
 
@@ -438,9 +540,6 @@ width:100%;
 <body>
 
 
-<div class="bg"></div>
-
-
 
 
 
@@ -451,8 +550,6 @@ width:100%;
 <a href="shop.html">🛒 Shop</a>
 
 <a href="downloads.html">📦 Downloads</a>
-
-<a href="contact.html">📩 Contact</a>
 
 <a href="login.html">🔐 Login</a>
 
@@ -466,28 +563,33 @@ width:100%;
 
 
 
-<div class="hero">
+
+<section class="hero">
 
 
 <div>
 
 
 <div class="logo">
+
 🎮
+
 </div>
 
 
 <h1>
+
 Download Hub
+
 </h1>
 
 
 
 <p>
 
-De premium marketplace voor creators.<br>
+De nieuwe premium marketplace voor creators.<br>
 
-Ontdek producten, downloads en exclusieve items.
+Ontdek unieke producten en digitale items.
 
 </p>
 
@@ -497,14 +599,14 @@ Ontdek producten, downloads en exclusieve items.
 <div class="buttons">
 
 
-<a class="btn primary" href="shop.html">
+<a class="btn main" href="shop.html">
 
-🛒 Naar Shop
+🛒 Start Shopping
 
 </a>
 
 
-<a class="btn" href="login.html">
+<a class="btn second" href="login.html">
 
 🔐 Login
 
@@ -517,7 +619,7 @@ Ontdek producten, downloads en exclusieve items.
 </div>
 
 
-</div>
+</section>
 
 
 
@@ -525,19 +627,16 @@ Ontdek producten, downloads en exclusieve items.
 
 
 
+<section class="section">
 
-<section>
 
-
-<div class="glass">
+<div class="box">
 
 
 <h2>
-Waarom kiezen voor ons?
+Waarom iedereen praat over ons 🔥
 </h2>
 
-
-<br>
 
 
 <div class="cards">
@@ -550,34 +649,32 @@ Waarom kiezen voor ons?
 </div>
 
 <h3>
-Snel
+Supersnel
 </h3>
 
 <p>
-Direct toegang tot digitale producten.
+Direct toegang tot producten.
 </p>
 
 </div>
-
 
 
 
 <div class="card">
 
 <div class="icon">
-🔒
+💎
 </div>
 
 <h3>
-Betrouwbaar
+Premium
 </h3>
 
 <p>
-Een moderne veilige omgeving.
+Een moderne ervaring.
 </p>
 
 </div>
-
 
 
 
@@ -588,11 +685,11 @@ Een moderne veilige omgeving.
 </div>
 
 <h3>
-Professioneel
+Creator Ready
 </h3>
 
 <p>
-Gebouwd voor creators.
+Gemaakt voor gamers.
 </p>
 
 </div>
@@ -613,26 +710,37 @@ Gebouwd voor creators.
 
 
 
-<section>
+<section class="section">
 
 
-<div class="glass login-box">
+<div class="box">
 
 
 <h2>
-🔐 Account Login
+⭐ Reviews
 </h2>
 
 
-<input placeholder="Gebruikersnaam">
+<p class="review">
+
+"De mooiste gaming marketplace die ik heb gezien!"
+
+</p>
 
 
-<input placeholder="Wachtwoord" type="password">
+<p class="review">
+
+"De stijl voelt echt professioneel."
+
+</p>
 
 
-<a class="btn primary">
-Inloggen
-</a>
+<p class="review">
+
+"Perfect op telefoon en pc."
+
+</p>
+
 
 
 </div>
@@ -648,15 +756,25 @@ Inloggen
 
 <footer>
 
+
 <h2>
 🎮 Download Hub
 </h2>
+
 
 <p>
 Premium Creator Marketplace
 </p>
 
+
+<p>
+© 2026 All rights reserved
+</p>
+
+
 </footer>
+
+
 
 
 
