@@ -3,7 +3,7 @@
 
 <head>
 
-<title>Download Hub | Premium Creator Platform</title>
+<title>Download Hub Premium</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -14,7 +14,7 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,Helvetica,sans-serif;
+font-family:Arial, sans-serif;
 }
 
 
@@ -30,73 +30,42 @@ overflow-x:hidden;
 
 
 
-/* bewegende achtergrond */
+/* VIDEO ACHTERGROND */
 
-body:before{
-
-content:"";
+.video-bg{
 
 position:fixed;
 
-width:600px;
+right:0;
 
-height:600px;
+bottom:0;
 
-background:#2563eb;
+min-width:100%;
 
-filter:blur(180px);
+min-height:100%;
 
-top:-200px;
+object-fit:cover;
 
-left:-200px;
-
-animation:move 8s infinite alternate;
-
-z-index:-1;
+z-index:-2;
 
 }
 
 
 
-body:after{
-
-content:"";
+.dark{
 
 position:fixed;
 
-width:600px;
+inset:0;
 
-height:600px;
+background:
 
-background:#9333ea;
-
-filter:blur(180px);
-
-bottom:-200px;
-
-right:-200px;
-
-animation:move 10s infinite alternate;
+linear-gradient(
+rgba(2,6,23,.75),
+rgba(2,6,23,.95)
+);
 
 z-index:-1;
-
-}
-
-
-
-@keyframes move{
-
-from{
-
-transform:translate(0);
-
-}
-
-to{
-
-transform:translate(100px,80px);
-
-}
 
 }
 
@@ -119,25 +88,19 @@ transform:translateX(-50%);
 
 width:90%;
 
-max-width:1200px;
+padding:18px;
 
-background:rgba(255,255,255,.08);
+background:rgba(255,255,255,.1);
 
-backdrop-filter:blur(25px);
+border:1px solid rgba(255,255,255,.2);
 
-border:1px solid rgba(255,255,255,.15);
+backdrop-filter:blur(20px);
 
 border-radius:30px;
 
-padding:18px;
+text-align:center;
 
-display:flex;
-
-justify-content:center;
-
-gap:25px;
-
-z-index:10;
+z-index:5;
 
 }
 
@@ -149,6 +112,8 @@ color:white;
 
 text-decoration:none;
 
+margin:15px;
+
 font-weight:bold;
 
 transition:.3s;
@@ -159,9 +124,7 @@ transition:.3s;
 
 nav a:hover{
 
-color:#60a5fa;
-
-transform:scale(1.1);
+color:#38bdf8;
 
 }
 
@@ -178,9 +141,9 @@ height:100vh;
 
 display:flex;
 
-justify-content:center;
-
 align-items:center;
+
+justify-content:center;
 
 text-align:center;
 
@@ -192,15 +155,17 @@ padding:30px;
 
 .logo{
 
-font-size:100px;
+font-size:120px;
 
-animation:float 3s infinite alternate;
+animation:floating 3s infinite alternate;
+
+filter:drop-shadow(0 0 30px #60a5fa);
 
 }
 
 
 
-@keyframes float{
+@keyframes floating{
 
 from{
 
@@ -210,23 +175,24 @@ transform:translateY(0);
 
 to{
 
-transform:translateY(-20px);
+transform:translateY(-25px);
 
 }
 
 }
+
 
 
 
 h1{
 
-font-size:85px;
+font-size:90px;
 
 background:linear-gradient(
 90deg,
 #38bdf8,
 #a78bfa,
-#f472b6
+#ec4899
 );
 
 -webkit-background-clip:text;
@@ -237,34 +203,27 @@ color:transparent;
 
 
 
+
 .hero p{
 
 font-size:25px;
 
 color:#cbd5e1;
 
-margin-top:25px;
+margin-top:20px;
 
 }
 
 
 
 
-.buttons{
-
-margin-top:40px;
-
-}
-
-
-
-.btn{
+.button{
 
 display:inline-block;
 
-padding:18px 45px;
+margin:30px 10px;
 
-margin:10px;
+padding:18px 45px;
 
 border-radius:50px;
 
@@ -278,7 +237,7 @@ transition:.3s;
 
 
 
-.main{
+.primary{
 
 background:linear-gradient(
 90deg,
@@ -292,7 +251,7 @@ color:white;
 
 
 
-.second{
+.secondary{
 
 background:white;
 
@@ -302,11 +261,11 @@ color:#020617;
 
 
 
-.btn:hover{
+.button:hover{
 
 transform:scale(1.1);
 
-box-shadow:0 0 30px #2563eb;
+box-shadow:0 0 30px #38bdf8;
 
 }
 
@@ -314,7 +273,9 @@ box-shadow:0 0 30px #2563eb;
 
 
 
-/* secties */
+
+
+/* KAARTEN */
 
 
 .section{
@@ -323,28 +284,25 @@ max-width:1200px;
 
 margin:auto;
 
-padding:70px 20px;
+padding:60px 20px;
 
 }
-
 
 
 
 .box{
 
-background:rgba(255,255,255,.08);
+background:rgba(255,255,255,.1);
+
+border:1px solid rgba(255,255,255,.2);
 
 backdrop-filter:blur(25px);
 
 border-radius:40px;
 
-padding:50px;
-
-border:1px solid rgba(255,255,255,.15);
+padding:40px;
 
 }
-
-
 
 
 
@@ -366,13 +324,15 @@ margin-top:30px;
 
 .card{
 
-width:300px;
+width:280px;
+
+padding:30px;
 
 background:rgba(255,255,255,.08);
 
-padding:35px;
+border-radius:25px;
 
-border-radius:30px;
+text-align:center;
 
 transition:.4s;
 
@@ -382,9 +342,7 @@ transition:.4s;
 
 .card:hover{
 
-transform:translateY(-15px);
-
-background:rgba(255,255,255,.15);
+transform:translateY(-15px) scale(1.03);
 
 }
 
@@ -400,83 +358,12 @@ font-size:55px;
 
 
 
-/* producten */
-
-
-.products{
-
-display:flex;
-
-gap:25px;
-
-flex-wrap:wrap;
-
-justify-content:center;
-
-}
-
-
-
-.product{
-
-width:280px;
-
-padding:25px;
-
-background:rgba(255,255,255,.1);
-
-border-radius:30px;
-
-text-align:center;
-
-}
-
-
-
-.product img{
-
-width:100%;
-
-border-radius:20px;
-
-}
-
-
-
-.price{
-
-font-size:30px;
-
-color:#38bdf8;
-
-}
-
-
-
-
-
-/* reviews */
-
-
-.review{
-
-font-size:20px;
-
-color:#cbd5e1;
-
-margin:20px;
-
-}
-
-
-
-
 
 footer{
 
 text-align:center;
 
-padding:60px;
+padding:50px;
 
 color:#94a3b8;
 
@@ -489,21 +376,12 @@ color:#94a3b8;
 @media(max-width:700px){
 
 
-nav{
-
-flex-direction:column;
-
-text-align:center;
-
-}
-
-
-
 h1{
 
 font-size:45px;
 
 }
+
 
 
 .hero p{
@@ -521,11 +399,15 @@ font-size:70px;
 }
 
 
-.card,.product{
 
-width:100%;
+nav a{
+
+display:block;
+
+margin:8px;
 
 }
+
 
 
 }
@@ -541,19 +423,41 @@ width:100%;
 
 
 
+<video autoplay muted loop class="video-bg">
+
+<source src="background.mp4" type="video/mp4">
+
+</video>
+
+
+<div class="dark"></div>
+
+
+
+
 
 
 <nav>
 
-<a href="index.html">🏠 Home</a>
+<a href="index.html">
+🏠 Home
+</a>
 
-<a href="shop.html">🛒 Shop</a>
 
-<a href="downloads.html">📦 Downloads</a>
+<a href="shop.html">
+🛒 Shop
+</a>
 
-<a href="login.html">🔐 Login</a>
 
-<a href="admin.html">👑 Admin</a>
+<a href="downloads.html">
+📦 Downloads
+</a>
+
+
+<a href="contact.html">
+📩 Contact
+</a>
+
 
 </nav>
 
@@ -571,55 +475,46 @@ width:100%;
 
 
 <div class="logo">
-
 🎮
-
 </div>
 
 
 <h1>
-
 Download Hub
-
 </h1>
-
 
 
 <p>
 
-De nieuwe premium marketplace voor creators.<br>
+De premium plek voor creators.<br>
 
-Ontdek unieke producten en digitale items.
+Ontdek unieke producten, downloads en meer.
 
 </p>
 
 
 
+<a class="button primary" href="shop.html">
 
-<div class="buttons">
-
-
-<a class="btn main" href="shop.html">
-
-🛒 Start Shopping
+🛒 Naar Shop
 
 </a>
 
 
-<a class="btn second" href="login.html">
+
+<a class="button secondary" href="login.html">
 
 🔐 Login
 
 </a>
 
 
-</div>
-
 
 </div>
 
 
 </section>
+
 
 
 
@@ -634,7 +529,7 @@ Ontdek unieke producten en digitale items.
 
 
 <h2>
-Waarom iedereen praat over ons 🔥
+Waarom iedereen ons gebruikt 🔥
 </h2>
 
 
@@ -649,7 +544,7 @@ Waarom iedereen praat over ons 🔥
 </div>
 
 <h3>
-Supersnel
+Snel
 </h3>
 
 <p>
@@ -657,6 +552,7 @@ Direct toegang tot producten.
 </p>
 
 </div>
+
 
 
 
@@ -675,6 +571,7 @@ Een moderne ervaring.
 </p>
 
 </div>
+
 
 
 
@@ -708,73 +605,18 @@ Gemaakt voor gamers.
 
 
 
-
-
-<section class="section">
-
-
-<div class="box">
-
-
-<h2>
-⭐ Reviews
-</h2>
-
-
-<p class="review">
-
-"De mooiste gaming marketplace die ik heb gezien!"
-
-</p>
-
-
-<p class="review">
-
-"De stijl voelt echt professioneel."
-
-</p>
-
-
-<p class="review">
-
-"Perfect op telefoon en pc."
-
-</p>
-
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
 <footer>
-
 
 <h2>
 🎮 Download Hub
 </h2>
-
 
 <p>
 Premium Creator Marketplace
 </p>
 
 
-<p>
-© 2026 All rights reserved
-</p>
-
-
 </footer>
-
-
 
 
 
