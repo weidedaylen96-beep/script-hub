@@ -3,92 +3,340 @@
 
 <head>
 
-<title>Admin Dashboard - Download Hub</title>
+<title>Download Hub Admin</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 
 <style>
 
-body {
-    font-family: Arial, sans-serif;
-    background:#f5f7fb;
-    text-align:center;
-    padding:40px;
+*{
+box-sizing:border-box;
+font-family:Arial,sans-serif;
 }
 
 
-.box {
-    background:white;
-    max-width:900px;
-    margin:auto;
-    padding:35px;
-    border-radius:25px;
-    box-shadow:0 10px 30px #ccc;
+body{
+
+margin:0;
+
+background:#020617;
+
+color:white;
+
 }
 
 
-nav {
-    margin-bottom:30px;
+
+/* Achtergrond */
+
+
+body:before{
+
+content:"";
+
+position:fixed;
+
+width:500px;
+
+height:500px;
+
+background:#2563eb;
+
+filter:blur(160px);
+
+top:-150px;
+
+left:-150px;
+
+opacity:.5;
+
+z-index:-1;
+
 }
 
 
-nav a {
-    text-decoration:none;
-    margin:10px;
-    color:#2563eb;
-    font-weight:bold;
+
+body:after{
+
+content:"";
+
+position:fixed;
+
+width:500px;
+
+height:500px;
+
+background:#9333ea;
+
+filter:blur(160px);
+
+bottom:-150px;
+
+right:-150px;
+
+opacity:.5;
+
+z-index:-1;
+
 }
 
 
-.stats {
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    flex-wrap:wrap;
+
+
+/* Menu */
+
+
+nav{
+
+position:fixed;
+
+top:20px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+width:90%;
+
+padding:18px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(20px);
+
+border-radius:25px;
+
+text-align:center;
+
+z-index:10;
+
 }
 
 
-.stat {
-    background:#2563eb;
-    color:white;
-    padding:25px;
-    border-radius:20px;
-    width:180px;
+
+nav a{
+
+color:white;
+
+text-decoration:none;
+
+margin:12px;
+
+font-weight:bold;
+
 }
 
 
-.card {
-    background:#f1f5f9;
-    padding:20px;
-    margin:20px;
-    border-radius:15px;
+
+nav a:hover{
+
+color:#60a5fa;
+
 }
 
 
-button {
-    padding:12px 25px;
-    border:none;
-    border-radius:10px;
-    cursor:pointer;
+
+
+/* Header */
+
+
+.hero{
+
+padding:150px 20px 50px;
+
+text-align:center;
+
 }
 
 
-.delete {
-    background:#dc2626;
-    color:white;
+
+.hero h1{
+
+font-size:65px;
+
+background:linear-gradient(
+90deg,
+#60a5fa,
+#a78bfa,
+#f472b6
+);
+
+-webkit-background-clip:text;
+
+color:transparent;
+
 }
 
 
-.add {
-    background:#2563eb;
-    color:white;
+
+.hero p{
+
+color:#cbd5e1;
+
+font-size:22px;
+
 }
 
 
-input {
-    padding:12px;
-    width:80%;
-    border-radius:10px;
-    border:1px solid #aaa;
+
+
+
+.container{
+
+max-width:1200px;
+
+margin:auto;
+
+padding:30px;
+
 }
+
+
+
+
+.grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
+
+}
+
+
+
+
+
+.card{
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(20px);
+
+border-radius:30px;
+
+padding:30px;
+
+border:1px solid rgba(255,255,255,.15);
+
+transition:.3s;
+
+}
+
+
+
+.card:hover{
+
+transform:translateY(-10px);
+
+}
+
+
+
+
+.number{
+
+font-size:45px;
+
+font-weight:bold;
+
+color:#60a5fa;
+
+}
+
+
+
+
+
+.table{
+
+margin-top:30px;
+
+}
+
+
+
+.row{
+
+display:flex;
+
+justify-content:space-between;
+
+background:rgba(255,255,255,.08);
+
+padding:20px;
+
+border-radius:20px;
+
+margin:10px 0;
+
+}
+
+
+
+
+
+.button{
+
+display:inline-block;
+
+background:linear-gradient(
+90deg,
+#2563eb,
+#9333ea
+);
+
+padding:14px 25px;
+
+border-radius:20px;
+
+color:white;
+
+text-decoration:none;
+
+font-weight:bold;
+
+margin-top:15px;
+
+}
+
+
+
+
+footer{
+
+text-align:center;
+
+padding:40px;
+
+color:#94a3b8;
+
+}
+
+
+
+
+@media(max-width:700px){
+
+.hero h1{
+
+font-size:45px;
+
+}
+
+
+nav a{
+
+display:block;
+
+margin:10px;
+
+}
+
+}
+
 
 </style>
 
@@ -98,145 +346,214 @@ input {
 <body>
 
 
-<script>
-
-let wachtwoord = prompt("🔒 Admin wachtwoord:");
-
-if (wachtwoord !== "daylenweide12") {
-
-document.body.innerHTML = `
-
-<h1>⛔ Toegang geweigerd</h1>
-
-<p>Verkeerd wachtwoord.</p>
-
-`;
-
-}
-
-</script>
-
 
 
 <nav>
 
-<a href="index.html">🏠 Home</a>
+<a href="index.html">Home</a>
 
-<a href="downloads.html">📦 Downloads</a>
+<a href="downloads.html">Downloads</a>
 
-<a href="profiel.html">👤 Profiel</a>
+<a href="shop.html">Shop</a>
+
+<a href="admin.html">Admin</a>
 
 </nav>
 
 
 
 
-<div class="box">
-
-
-<h1>👑 Admin Dashboard</h1>
-
-<p>Welkom eigenaar van Download Hub 🚀</p>
 
 
 
-<h2>📊 Statistieken</h2>
+<section class="hero">
 
 
-<div class="stats">
+<h1>
+👑 Admin Dashboard
+</h1>
 
 
-<div class="stat">
-<h2>25</h2>
-<p>Bestanden</p>
-</div>
+<p>
+Beheer jouw Download Hub platform
+</p>
 
 
-<div class="stat">
-<h2>430</h2>
-<p>Downloads</p>
-</div>
-
-
-<div class="stat">
-<h2>120</h2>
-<p>Bezoekers</p>
-</div>
-
-
-</div>
+</section>
 
 
 
 
-<h2>📦 Bestanden beheren</h2>
 
 
-<div class="card">
 
-<h3>📜 Script</h3>
+<div class="container">
 
-<p>Handig script bestand</p>
 
-<button>✏️ Bewerken</button>
 
-<button class="delete">🗑️ Verwijderen</button>
 
-</div>
+
+<div class="grid">
 
 
 
 <div class="card">
 
-<h3>🎮 Game bestand</h3>
+<h2>📦 Downloads</h2>
 
-<p>Leuk game bestand</p>
+<div class="number">
+128
+</div>
 
-<button>✏️ Bewerken</button>
-
-<button class="delete">🗑️ Verwijderen</button>
+<p>
+Totaal downloads
+</p>
 
 </div>
 
 
 
-
-
-<h2>➕ Nieuwe download</h2>
 
 
 <div class="card">
 
-<input placeholder="Naam bestand">
+<h2>👥 Gebruikers</h2>
 
-<br><br>
+<div class="number">
+54
+</div>
 
-<input placeholder="Beschrijving">
-
-<br><br>
-
-<button class="add">
-Toevoegen
-</button>
+<p>
+Geregistreerde gebruikers
+</p>
 
 </div>
 
 
 
-<h2>⚙️ Instellingen</h2>
+
 
 
 <div class="card">
 
-<p>Website: Download Hub</p>
+<h2>🛒 Producten</h2>
 
-<p>Status: 🟢 Online</p>
+<div class="number">
+12
+</div>
+
+<p>
+Actieve producten
+</p>
 
 </div>
 
 
 
+
+
 </div>
+
+
+
+
+
+
+
+
+<div class="card table">
+
+
+<h2>
+📂 Laatste downloads
+</h2>
+
+
+
+<div class="row">
+
+<span>🎮 Roblox Script</span>
+
+<span>Vandaag</span>
+
+</div>
+
+
+
+<div class="row">
+
+<span>🛠 Tool Pack</span>
+
+<span>Gisteren</span>
+
+</div>
+
+
+
+<div class="row">
+
+<span>📜 Script Pack</span>
+
+<span>2 dagen geleden</span>
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="card">
+
+
+<h2>
+⚙️ Beheer
+</h2>
+
+
+<p>
+Hier komen later je upload- en beheerfuncties.
+</p>
+
+
+<a class="button" href="downloads.html">
+Bekijk Downloads
+</a>
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<footer>
+
+<h3>
+⬇ Download Hub Admin
+</h3>
+
+<p>
+Beheeromgeving
+</p>
+
+</footer>
+
+
 
 
 </body>
