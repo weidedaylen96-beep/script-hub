@@ -1,1 +1,2 @@
 Dit is mijn eerste game bestand!
+<p>⬇️ Downloads: 12</p>
