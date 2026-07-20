@@ -7,6 +7,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+
 <style>
 
 *{
@@ -17,45 +18,123 @@ box-sizing:border-box;
 body{
 
 margin:0;
+
 font-family:Arial, sans-serif;
-background:#050816;
+
 color:white;
+
+background:
+
+linear-gradient(
+135deg,
+rgba(2,6,23,.95),
+rgba(30,41,59,.85)
+),
+
+url("https://images.unsplash.com/photo-1518770660439-4636190af475");
+
+background-size:cover;
+
+background-position:center;
+
+background-attachment:fixed;
+
 overflow-x:hidden;
 
 }
 
 
-/* bewegende achtergrond */
 
-.circle{
 
-position:absolute;
-border-radius:50%;
-filter:blur(80px);
-opacity:.5;
+/* Bewegende achtergrond */
+
+body:before{
+
+content:"";
+
+position:fixed;
+
+width:400px;
+
+height:400px;
+
+background:#2563eb;
+
+filter:blur(150px);
+
+top:-100px;
+
+left:-100px;
+
+opacity:.6;
+
+animation:move 8s infinite alternate;
+
 z-index:-1;
 
 }
 
 
-.c1{
 
-width:300px;
-height:300px;
-background:#2563eb;
-top:100px;
-left:-100px;
+body:after{
+
+content:"";
+
+position:fixed;
+
+width:400px;
+
+height:400px;
+
+background:#9333ea;
+
+filter:blur(150px);
+
+bottom:-100px;
+
+right:-100px;
+
+opacity:.6;
+
+animation:move2 10s infinite alternate;
+
+z-index:-1;
 
 }
 
 
-.c2{
 
-width:350px;
-height:350px;
-background:#9333ea;
-right:-100px;
-top:400px;
+@keyframes move{
+
+from{
+
+transform:translate(0,0);
+
+}
+
+to{
+
+transform:translate(150px,100px);
+
+}
+
+}
+
+
+
+@keyframes move2{
+
+from{
+
+transform:translate(0,0);
+
+}
+
+to{
+
+transform:translate(-150px,-100px);
+
+}
 
 }
 
@@ -66,19 +145,20 @@ top:400px;
 nav{
 
 position:sticky;
+
 top:0;
 
-background:rgba(255,255,255,.08);
-
-backdrop-filter:blur(20px);
+z-index:10;
 
 padding:20px;
 
 text-align:center;
 
-border-bottom:1px solid rgba(255,255,255,.15);
+background:rgba(255,255,255,.1);
 
-z-index:10;
+backdrop-filter:blur(20px);
+
+border-bottom:1px solid rgba(255,255,255,.2);
 
 }
 
@@ -87,13 +167,15 @@ z-index:10;
 nav a{
 
 color:white;
+
 text-decoration:none;
-margin:10px;
+
+margin:12px;
+
 font-weight:bold;
 
-transition:.3s;
-
 }
+
 
 
 nav a:hover{
@@ -110,11 +192,18 @@ color:#60a5fa;
 
 text-align:center;
 
-padding:100px 20px;
-
-animation:show 1s;
+padding:120px 20px;
 
 }
+
+
+
+.logo{
+
+font-size:80px;
+
+}
+
 
 
 
@@ -122,7 +211,11 @@ animation:show 1s;
 
 font-size:75px;
 
-background:linear-gradient(90deg,#60a5fa,#c084fc);
+background:linear-gradient(
+90deg,
+#60a5fa,
+#c084fc
+);
 
 -webkit-background-clip:text;
 
@@ -132,9 +225,11 @@ color:transparent;
 
 
 
+
+
 .hero p{
 
-font-size:24px;
+font-size:25px;
 
 color:#cbd5e1;
 
@@ -142,19 +237,21 @@ color:#cbd5e1;
 
 
 
-
-
-.btn{
+.button{
 
 display:inline-block;
 
-margin-top:30px;
+margin-top:35px;
 
 padding:18px 45px;
 
-background:linear-gradient(90deg,#2563eb,#9333ea);
-
 border-radius:50px;
+
+background:linear-gradient(
+90deg,
+#2563eb,
+#9333ea
+);
 
 color:white;
 
@@ -168,7 +265,7 @@ transition:.3s;
 
 
 
-.btn:hover{
+.button:hover{
 
 transform:scale(1.1);
 
@@ -184,16 +281,17 @@ max-width:1200px;
 
 margin:auto;
 
-padding:40px 20px;
+padding:40px;
 
 }
 
 
 
 
-.section{
 
-background:rgba(255,255,255,.08);
+.box{
+
+background:rgba(255,255,255,.1);
 
 backdrop-filter:blur(20px);
 
@@ -203,7 +301,7 @@ padding:40px;
 
 margin:40px 0;
 
-border:1px solid rgba(255,255,255,.15);
+border:1px solid rgba(255,255,255,.2);
 
 }
 
@@ -226,17 +324,18 @@ flex-wrap:wrap;
 
 
 
+
 .card{
 
 width:280px;
 
-background:rgba(255,255,255,.1);
+background:rgba(255,255,255,.12);
 
 padding:30px;
 
 border-radius:25px;
 
-transition:.4s;
+transition:.3s;
 
 }
 
@@ -246,15 +345,15 @@ transition:.4s;
 
 transform:translateY(-15px);
 
-background:rgba(255,255,255,.18);
-
 }
+
+
 
 
 
 .icon{
 
-font-size:50px;
+font-size:55px;
 
 }
 
@@ -262,38 +361,42 @@ font-size:50px;
 
 
 
-.download{
+.stats{
 
 display:flex;
 
-justify-content:space-between;
+justify-content:center;
 
-align-items:center;
+gap:30px;
+
+flex-wrap:wrap;
+
+}
+
+
+
+.stat{
 
 background:rgba(255,255,255,.1);
 
-padding:20px;
+padding:25px;
 
 border-radius:20px;
 
-margin:15px 0;
+width:220px;
+
+text-align:center;
 
 }
 
 
 
+.stat h2{
 
-.tag{
-
-background:#2563eb;
-
-padding:8px 15px;
-
-border-radius:20px;
-
-font-size:14px;
+font-size:40px;
 
 }
+
 
 
 
@@ -304,32 +407,9 @@ text-align:center;
 
 padding:40px;
 
-background:#020617;
+background:rgba(0,0,0,.3);
 
-color:#94a3b8;
-
-}
-
-
-
-
-@keyframes show{
-
-from{
-
-opacity:0;
-
-transform:translateY(50px);
-
-}
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
+color:#cbd5e1;
 
 }
 
@@ -339,9 +419,17 @@ transform:translateY(0);
 
 @media(max-width:700px){
 
+
 .hero h1{
 
 font-size:45px;
+
+}
+
+
+.logo{
+
+font-size:50px;
 
 }
 
@@ -354,6 +442,7 @@ margin:15px;
 
 }
 
+
 }
 
 
@@ -364,13 +453,8 @@ margin:15px;
 </head>
 
 
+
 <body>
-
-
-<div class="circle c1"></div>
-
-<div class="circle c2"></div>
-
 
 
 
@@ -381,8 +465,6 @@ margin:15px;
 <a href="downloads.html">📦 Downloads</a>
 
 <a href="shop.html">🛒 Shop</a>
-
-<a href="over.html">ℹ️ Over</a>
 
 <a href="contact.html">📩 Contact</a>
 
@@ -400,23 +482,31 @@ margin:15px;
 <section class="hero">
 
 
-<h1>DOWNLOAD HUB</h1>
+<div class="logo">
+📦
+</div>
+
+
+<h1>
+DOWNLOAD HUB
+</h1>
 
 
 <p>
-De volgende generatie plek voor digitale downloads 🚀
+De moderne plek voor scripts, tools en digitale downloads 🚀
 </p>
 
 
 
-<a class="btn" href="downloads.html">
+<a class="button" href="downloads.html">
 
-Ontdek downloads
+Bekijk downloads
 
 </a>
 
 
 </section>
+
 
 
 
@@ -430,23 +520,28 @@ Ontdek downloads
 
 
 
-<div class="section">
+<div class="box">
 
 
-<h2>🔥 Waarom Download Hub?</h2>
+<h2>
+🔥 Waarom Download Hub?
+</h2>
 
 
 <div class="cards">
 
 
+
 <div class="card">
 
-<div class="icon">⚡</div>
+<div class="icon">
+⚡
+</div>
 
 <h3>Snel</h3>
 
 <p>
-Vind bestanden zonder zoeken door honderden pagina's.
+Vind bestanden zonder moeite.
 </p>
 
 </div>
@@ -456,12 +551,14 @@ Vind bestanden zonder zoeken door honderden pagina's.
 
 <div class="card">
 
-<div class="icon">🛡️</div>
+<div class="icon">
+🛡️
+</div>
 
 <h3>Betrouwbaar</h3>
 
 <p>
-Een overzichtelijke plek voor jouw downloads.
+Een duidelijke plek voor downloads.
 </p>
 
 </div>
@@ -471,12 +568,14 @@ Een overzichtelijke plek voor jouw downloads.
 
 <div class="card">
 
-<div class="icon">🚀</div>
+<div class="icon">
+🚀
+</div>
 
 <h3>Modern</h3>
 
 <p>
-Een nieuwe manier om bestanden te ontdekken.
+Gebouwd voor de toekomst.
 </p>
 
 </div>
@@ -494,73 +593,45 @@ Een nieuwe manier om bestanden te ontdekken.
 
 
 
+<div class="box">
 
 
-<div class="section">
+<h2>
+📊 Download Hub
+</h2>
 
 
-<h2>📈 Populaire downloads</h2>
+<div class="stats">
 
 
+<div class="stat">
 
-<div class="download">
+<h2>100+</h2>
 
-<div>
-
-<h3>📜 Premium Script</h3>
-
-<p>Handige tools en scripts</p>
-
-</div>
-
-
-<span class="tag">
-HOT
-</span>
-
+<p>Downloads</p>
 
 </div>
 
 
 
+<div class="stat">
 
+<h2>24/7</h2>
 
-<div class="download">
-
-<div>
-
-<h3>🎮 Game Tools</h3>
-
-<p>Tools voor gamers</p>
-
-</div>
-
-
-<span class="tag">
-NEW
-</span>
-
+<p>Beschikbaar</p>
 
 </div>
 
 
 
 
+<div class="stat">
 
-<div class="download">
+<h2>🚀</h2>
 
-<div>
-
-<h3>🛠️ Utility Pack</h3>
-
-<p>Handige programma's</p>
+<p>Groeiend</p>
 
 </div>
-
-
-<span class="tag">
-TOP
-</span>
 
 
 </div>
@@ -574,21 +645,20 @@ TOP
 
 
 
+<div class="box">
 
-<div class="section">
 
-
-<h2>💬 Klaar om te beginnen?</h2>
+<h2>
+Klaar om te starten?
+</h2>
 
 
 <p>
-
-Bekijk alle downloads en ontdek wat er beschikbaar is.
-
+Bekijk onze nieuwste downloads.
 </p>
 
 
-<a class="btn" href="downloads.html">
+<a class="button" href="downloads.html">
 
 Start nu 🚀
 
@@ -601,7 +671,9 @@ Start nu 🚀
 
 
 
+
 </div>
+
 
 
 
