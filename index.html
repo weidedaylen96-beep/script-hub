@@ -10,25 +10,26 @@
 
 <style>
 
-
 * {
-    box-sizing: border-box;
+    box-sizing:border-box;
 }
 
 
 body {
 
     margin:0;
-    font-family: Arial, sans-serif;
+
+    font-family:Arial, sans-serif;
 
     background:
     linear-gradient(
-    rgba(15,23,42,0.75),
-    rgba(15,23,42,0.75)
+    rgba(15,23,42,0.85),
+    rgba(15,23,42,0.85)
     ),
     url("https://images.unsplash.com/photo-1518770660439-4636190af475");
 
     background-size:cover;
+
     background-attachment:fixed;
 
     color:white;
@@ -37,18 +38,22 @@ body {
 
 
 
+/* Menu */
+
+
 nav {
 
     position:sticky;
+
     top:0;
-
-    background:rgba(255,255,255,0.12);
-
-    backdrop-filter:blur(15px);
 
     padding:20px;
 
     text-align:center;
+
+    background:rgba(255,255,255,0.12);
+
+    backdrop-filter:blur(15px);
 
     border-bottom:1px solid rgba(255,255,255,0.2);
 
@@ -66,8 +71,6 @@ nav a {
 
     font-weight:bold;
 
-    transition:0.3s;
-
 }
 
 
@@ -82,13 +85,16 @@ nav a:hover {
 
 
 
+/* Hero */
+
+
 .hero {
 
     text-align:center;
 
     padding:100px 20px;
 
-    animation: verschijnen 1s;
+    animation:show 1s;
 
 }
 
@@ -96,9 +102,7 @@ nav a:hover {
 
 .hero h1 {
 
-    font-size:65px;
-
-    margin-bottom:10px;
+    font-size:70px;
 
 }
 
@@ -112,13 +116,14 @@ nav a:hover {
 
 
 
-.btn {
+
+.button {
 
     display:inline-block;
 
-    margin-top:30px;
+    margin-top:25px;
 
-    padding:16px 35px;
+    padding:16px 40px;
 
     background:#2563eb;
 
@@ -130,15 +135,15 @@ nav a:hover {
 
     font-weight:bold;
 
-    transition:0.3s;
+    transition:.3s;
 
 }
 
 
 
-.btn:hover {
+.button:hover {
 
-    transform:scale(1.1);
+    transform:scale(1.08);
 
     background:#3b82f6;
 
@@ -150,7 +155,7 @@ nav a:hover {
 
 .container {
 
-    max-width:1000px;
+    max-width:1100px;
 
     margin:auto;
 
@@ -161,8 +166,7 @@ nav a:hover {
 
 
 
-
-.glass {
+.box {
 
     background:rgba(255,255,255,0.12);
 
@@ -172,11 +176,11 @@ nav a:hover {
 
     padding:35px;
 
-    margin:25px 0;
+    margin:30px 0;
 
     border:1px solid rgba(255,255,255,0.2);
 
-    animation:verschijnen 1.2s;
+    animation:show 1.2s;
 
 }
 
@@ -199,19 +203,18 @@ nav a:hover {
 
 
 
+
 .card {
 
-    width:250px;
+    background:rgba(255,255,255,0.12);
 
-    background:rgba(255,255,255,0.15);
+    padding:30px;
 
-    backdrop-filter:blur(10px);
-
-    padding:25px;
+    width:260px;
 
     border-radius:20px;
 
-    transition:0.3s;
+    transition:.3s;
 
 }
 
@@ -226,20 +229,32 @@ nav a:hover {
 
 
 
-footer {
 
-    text-align:center;
+.icon {
 
-    padding:30px;
-
-    background:rgba(0,0,0,0.3);
+    font-size:45px;
 
 }
 
 
 
 
-@keyframes verschijnen {
+
+footer {
+
+    background:rgba(0,0,0,0.4);
+
+    padding:30px;
+
+    text-align:center;
+
+}
+
+
+
+
+
+@keyframes show {
 
 from {
 
@@ -248,7 +263,6 @@ opacity:0;
 transform:translateY(40px);
 
 }
-
 
 to {
 
@@ -266,7 +280,6 @@ transform:translateY(0);
 
 @media(max-width:700px){
 
-
 .hero h1 {
 
 font-size:40px;
@@ -282,7 +295,6 @@ margin:15px;
 
 }
 
-
 }
 
 
@@ -294,19 +306,17 @@ margin:15px;
 
 
 
-
 <body>
 
 
 
 <nav>
 
-
 <a href="index.html">🏠 Home</a>
 
 <a href="downloads.html">📦 Downloads</a>
 
-<a href="over.html">ℹ️ Over</a>
+<a href="over.html">ℹ️ Over ons</a>
 
 <a href="login.html">🔐 Login</a>
 
@@ -316,8 +326,8 @@ margin:15px;
 
 <a href="contact.html">📩 Contact</a>
 
-
 </nav>
+
 
 
 
@@ -330,17 +340,20 @@ margin:15px;
 
 
 <p>
-De moderne plek voor bestanden, tools en downloads 🚀
+Een betrouwbare plek voor handige bestanden, tools en downloads 🚀
 </p>
 
 
 
-<a class="btn" href="downloads.html">
-Bekijk downloads
+<a class="button" href="downloads.html">
+Bekijk downloads 📥
 </a>
 
 
+
 </section>
+
+
 
 
 
@@ -350,16 +363,18 @@ Bekijk downloads
 
 
 
-<div class="glass">
 
 
-<h2>Welkom 👋</h2>
+<div class="box">
+
+
+<h2>👋 Welkom bij Download Hub</h2>
 
 
 <p>
 
-Download handige bestanden snel en makkelijk.
-Alles overzichtelijk op één plek.
+Wij maken het makkelijk om bestanden te vinden,
+te bekijken en te downloaden.
 
 </p>
 
@@ -372,11 +387,10 @@ Alles overzichtelijk op één plek.
 
 
 
+
 <h2 style="text-align:center;">
-Waarom Download Hub?
+Waarom kiezen voor Download Hub?
 </h2>
-
-
 
 
 
@@ -386,56 +400,92 @@ Waarom Download Hub?
 
 <div class="card">
 
-<h2>⚡</h2>
+<div class="icon">
+🛡️
+</div>
 
-<h3>Snel</h3>
+<h3>Veilig gevoel</h3>
 
 <p>
-Snelle downloads zonder gedoe.
+Duidelijke informatie en overzichtelijke downloads.
 </p>
 
 </div>
-
 
 
 
 
 <div class="card">
 
-<h2>📂</h2>
+<div class="icon">
+⚡
+</div>
 
-<h3>Overzichtelijk</h3>
+<h3>Snel & simpel</h3>
 
 <p>
-Alles netjes verdeeld in categorieën.
+Vind snel wat je nodig hebt zonder ingewikkelde stappen.
 </p>
 
 </div>
-
 
 
 
 
 <div class="card">
 
-<h2>🔒</h2>
+<div class="icon">
+📂
+</div>
 
-<h3>Veilig</h3>
+<h3>Goed georganiseerd</h3>
 
 <p>
-Een eigen plek voor jouw bestanden.
+Downloads netjes verdeeld in categorieën.
 </p>
 
 </div>
 
 
 
+</div>
+
+
+
+
+
+
+
+<div class="box">
+
+
+<h2>💬 Hulp nodig?</h2>
+
+
+<p>
+
+Heb je een vraag of probleem?
+
+Neem gerust contact met ons op.
+
+</p>
+
+
+
+<a class="button" href="contact.html">
+Neem contact op 📩
+</a>
+
 
 </div>
 
 
 
+
+
 </div>
+
+
 
 
 
@@ -444,7 +494,17 @@ Een eigen plek voor jouw bestanden.
 <footer>
 
 <p>
-© 2026 Download Hub • Alle rechten voorbehouden
+📦 Download Hub
+</p>
+
+
+<p>
+Contact • Over ons • Privacy
+</p>
+
+
+<p>
+© 2026 Download Hub
 </p>
 
 
