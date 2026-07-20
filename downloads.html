@@ -3,281 +3,122 @@
 
 <head>
 
-<title>Downloads - Download Hub</title>
+<title>Download Hub - Scripts</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 
-*{
-box-sizing:border-box;
+body {
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#050816;
+    color:white;
 }
 
 
-body{
+nav {
 
-margin:0;
-font-family:Arial,sans-serif;
-
-background:
-linear-gradient(
-rgba(5,8,22,.85),
-rgba(5,8,22,.85)
-),
-url("https://images.unsplash.com/photo-1518770660439-4636190af475");
-
-background-size:cover;
-background-attachment:fixed;
-
-color:white;
-
+    background:rgba(255,255,255,0.1);
+    padding:20px;
+    text-align:center;
 }
 
 
+nav a {
 
-nav{
-
-padding:20px;
-
-text-align:center;
-
-background:rgba(255,255,255,.12);
-
-backdrop-filter:blur(15px);
+    color:white;
+    text-decoration:none;
+    margin:10px;
+    font-weight:bold;
 
 }
 
 
+.container {
 
-nav a{
-
-color:white;
-
-text-decoration:none;
-
-margin:10px;
-
-font-weight:bold;
+    max-width:1000px;
+    margin:auto;
+    padding:40px;
 
 }
 
 
+h1 {
 
-header{
-
-text-align:center;
-
-padding:60px 20px;
+    text-align:center;
+    font-size:50px;
 
 }
 
 
+.cards {
 
-header h1{
-
-font-size:55px;
-
-}
-
-
-
-.search{
-
-text-align:center;
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
 
 }
 
 
-.search input{
+.card {
 
-width:70%;
-
-padding:15px;
-
-border-radius:20px;
-
-border:none;
-
-font-size:18px;
+    background:rgba(255,255,255,0.12);
+    padding:30px;
+    border-radius:25px;
+    width:280px;
+    text-align:center;
 
 }
 
 
+.card:hover {
 
-
-
-.categories{
-
-text-align:center;
-
-margin:30px;
+    transform:translateY(-8px);
+    transition:.3s;
 
 }
 
 
+.button {
 
-.categories button{
-
-padding:12px 20px;
-
-margin:5px;
-
-border:none;
-
-border-radius:20px;
-
-cursor:pointer;
-
-background:#2563eb;
-
-color:white;
+    display:block;
+    margin-top:20px;
+    background:#2563eb;
+    color:white;
+    padding:15px;
+    border-radius:15px;
+    text-decoration:none;
+    font-weight:bold;
 
 }
 
 
+.button:hover {
 
-
-
-.container{
-
-max-width:1200px;
-
-margin:auto;
-
-padding:30px;
+    background:#3b82f6;
 
 }
 
 
+.tag {
 
-.cards{
-
-display:flex;
-
-justify-content:center;
-
-gap:25px;
-
-flex-wrap:wrap;
+    background:#9333ea;
+    padding:8px 15px;
+    border-radius:20px;
 
 }
 
 
+footer {
 
-
-.card{
-
-width:300px;
-
-background:rgba(255,255,255,.12);
-
-backdrop-filter:blur(15px);
-
-border-radius:25px;
-
-padding:25px;
-
-border:1px solid rgba(255,255,255,.2);
-
-transition:.3s;
+    text-align:center;
+    padding:30px;
 
 }
-
-
-
-.card:hover{
-
-transform:translateY(-10px);
-
-}
-
-
-
-
-.card img{
-
-width:100%;
-
-height:160px;
-
-object-fit:cover;
-
-border-radius:15px;
-
-}
-
-
-
-.tag{
-
-background:#9333ea;
-
-padding:7px 15px;
-
-border-radius:20px;
-
-}
-
-
-
-.download{
-
-background:#2563eb;
-
-color:white;
-
-padding:12px;
-
-border-radius:15px;
-
-display:block;
-
-text-decoration:none;
-
-margin-top:15px;
-
-text-align:center;
-
-}
-
-
-
-.download:hover{
-
-background:#3b82f6;
-
-}
-
-
-
-input{
-
-width:100%;
-
-padding:12px;
-
-border-radius:10px;
-
-border:none;
-
-}
-
-
-
-footer{
-
-text-align:center;
-
-padding:30px;
-
-color:#94a3b8;
-
-}
-
-
 
 </style>
-
 
 </head>
 
@@ -296,54 +137,7 @@ color:#94a3b8;
 
 <a href="contact.html">📩 Contact</a>
 
-<a href="admin.html">👑 Admin</a>
-
 </nav>
-
-
-
-
-<header>
-
-<h1>📦 Downloads</h1>
-
-<p>
-Vind jouw favoriete bestanden
-</p>
-
-
-</header>
-
-
-
-
-
-<div class="search">
-
-<input 
-id="zoek"
-placeholder="🔍 Zoek downloads..."
-onkeyup="zoeken()">
-
-</div>
-
-
-
-
-
-<div class="categories">
-
-<button>Alles</button>
-
-<button>🎮 Roblox</button>
-
-<button>🛠️ Tools</button>
-
-<button>📜 Scripts</button>
-
-</div>
-
-
 
 
 
@@ -352,92 +146,39 @@ onkeyup="zoeken()">
 <div class="container">
 
 
-<div class="cards" id="downloads">
+<h1>📦 Scripts Download</h1>
+
+
+<div class="cards">
 
 
 
 
 
 <div class="card">
-
-
-<span class="tag">
-SCRIPT
-</span>
-
-
-<img src="https://via.placeholder.com/300">
-
-
-
-<h2>📜 Mijn Script</h2>
-
-
-<p>
-Beschrijving van jouw script.
-</p>
-
-
-<p>
-📥 Downloads: <b>0</b>
-</p>
-
-
-<p>
-⭐ Beoordeling: Nog geen
-</p>
-
-
-
-<a class="download" href="jouw-bestand.zip" download>
-
-📥 Download
-
-</a>
-
-
-</div>
-
-
-
-
-
-
-
-<div class="card">
-
 
 <span class="tag">
 ROBLOX
 </span>
 
 
-<img src="https://via.placeholder.com/300">
-
-
-
-<h2>🎮 Roblox Tool</h2>
+<h2>🪽 Fly System</h2>
 
 
 <p>
-Beschrijving van jouw Roblox bestand.
+Een vlieg-systeem voor je eigen Roblox Studio game.
 </p>
 
 
 <p>
-📥 Downloads: <b>0</b>
-</p>
-
-
-<p>
-⭐ Beoordeling: Nog geen
+📁 Bestand: fly-system.lua
 </p>
 
 
 
-<a class="download" href="roblox-tool.zip" download>
+<a class="button" href="fly-system.lua" download>
 
-📥 Download
+📥 Download Script
 
 </a>
 
@@ -452,38 +193,28 @@ Beschrijving van jouw Roblox bestand.
 
 <div class="card">
 
-
 <span class="tag">
-TOOL
+SCRIPT
 </span>
 
 
-<img src="https://via.placeholder.com/300">
-
-
-
-<h2>🛠️ Tool Pack</h2>
+<h2>⚡ Speed System</h2>
 
 
 <p>
-Handige tools.
+Een snelheidssysteem voor je eigen game.
 </p>
 
 
 <p>
-📥 Downloads: <b>0</b>
-</p>
-
-
-<p>
-⭐ Beoordeling: Nog geen
+📁 Bestand: speed-system.lua
 </p>
 
 
 
-<a class="download" href="tool-pack.zip" download>
+<a class="button" href="speed-system.lua" download>
 
-📥 Download
+📥 Download Script
 
 </a>
 
@@ -493,58 +224,48 @@ Handige tools.
 
 
 
+
+
+
+<div class="card">
+
+<span class="tag">
+TOOL
+</span>
+
+
+<h2>🛠️ Tool Pack</h2>
+
+
+<p>
+Handige Roblox Studio tools.
+</p>
+
+
+<p>
+📁 Bestand: tool-pack.zip
+</p>
+
+
+
+<a class="button" href="tool-pack.zip" download>
+
+📥 Download Pack
+
+</a>
+
+
 </div>
 
+
+
+
+
 </div>
 
 
+</div>
 
-
-
-
-
-<script>
-
-
-function zoeken(){
-
-let input=document
-.getElementById("zoek")
-.value
-.toLowerCase();
-
-
-let kaarten=document
-.querySelectorAll(".card");
-
-
-kaarten.forEach(function(card){
-
-
-if(card.innerText
-.toLowerCase()
-.includes(input)){
-
-
-card.style.display="block";
-
-
-}else{
-
-
-card.style.display="none";
-
-
-}
-
-
-});
-
-
-}
-
-
-</script>
 
 
 
@@ -554,6 +275,7 @@ card.style.display="none";
 © 2026 Download Hub
 
 </footer>
+
 
 
 
