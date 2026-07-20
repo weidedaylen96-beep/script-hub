@@ -1,3 +1,24 @@
 Dit is mijn eerste script!
 <div class="card script">
 <h2>📜 Script</h2>
+function filter(categorie){
+
+let kaarten = document.getElementsByClassName("card");
+
+for(let i = 0; i < kaarten.length; i++){
+
+if(categorie == "all"){
+kaarten[i].style.display = "block";
+}
+
+else if(kaarten[i].classList.contains(categorie)){
+kaarten[i].style.display = "block";
+}
+
+else{
+kaarten[i].style.display = "none";
+}
+
+}
+
+}
