@@ -1,180 +1,327 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Downloads</title>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background: #f2f2f2;
-            padding: 40px;
-            transition: 0.3s;
-        }
+<title>Downloads - Download Hub</title>
 
-        nav {
-            margin-bottom: 30px;
-        }
+<style>
 
-        nav a {
-            text-decoration: none;
-            margin: 10px;
-            color: #007bff;
-            font-weight: bold;
-        }
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+    text-align: center;
+    padding: 30px;
+    transition: 0.3s;
+}
 
-        .box {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            max-width: 700px;
-            margin: auto;
-        }
 
-        .card {
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 12px;
-            padding: 20px;
-            margin: 15px;
-        }
+nav {
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+}
 
-        .download {
-            display: inline-block;
-            background: #007bff;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 8px;
-            text-decoration: none;
-        }
 
-        input {
-            padding: 12px;
-            width: 80%;
-            border-radius: 8px;
-            border: 1px solid #aaa;
-            margin-bottom: 20px;
-        }
+nav a {
+    text-decoration: none;
+    margin: 10px;
+    color: #2563eb;
+    font-weight: bold;
+}
 
-        button {
-            padding: 10px 20px;
-            border-radius: 8px;
-            cursor: pointer;
-        }
 
-        .dark {
-            background: #111;
-            color: white;
-        }
+.box {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 800px;
+    margin: auto;
+    box-shadow: 0 5px 20px #ddd;
+}
 
-        .dark .box,
-        .dark .card {
-            background: #222;
-            color: white;
-        }
 
-        .dark nav a {
-            color: #66b3ff;
-        }
-    </style>
+input {
+    width: 80%;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #aaa;
+    margin: 15px;
+}
+
+
+button {
+    padding: 12px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+}
+
+
+.card {
+    background: #ffffff;
+    padding: 25px;
+    margin: 20px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px #ddd;
+}
+
+
+.card img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 15px;
+}
+
+
+.download {
+    display: inline-block;
+    background: #2563eb;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+
+.download:hover {
+    background: #1d4ed8;
+}
+
+
+/* Donkere modus */
+
+.dark {
+    background: #111;
+    color: white;
+}
+
+
+.dark .box,
+.dark .card,
+.dark nav {
+    background: #222;
+    color: white;
+}
+
+
+.dark nav a {
+    color: #60a5fa;
+}
+
+
+</style>
 
 </head>
 
+
 <body>
 
+
 <nav>
-    <a href="index.html">🏠 Home</a>
-    <a href="downloads.html">📦 Downloads</a>
-    <a href="over.html">ℹ️ Over ons</a>
+
+<a href="index.html">🏠 Home</a>
+<a href="downloads.html">📦 Downloads</a>
+<a href="over.html">ℹ️ Over ons</a>
+<a href="login.html">🔐 Login</a>
+<a href="profiel.html">👤 Profiel</a>
+<a href="admin.html">👑 Admin</a>
+
 </nav>
+
 
 
 <button onclick="donker()">🌙 Donkere modus</button>
 
+
+
 <div class="box">
+
 
 <h1>📦 Downloads</h1>
 
+
 <input 
-type="text" 
-id="search" 
-placeholder="Zoek een download..."
+id="search"
+placeholder="🔍 Zoek download..."
 onkeyup="zoek()">
-    <div>
-<button onclick="filter('all')">📦 Alle</button>
-<button onclick="filter('script')">📜 Scripts</button>
-<button onclick="filter('game')">🎮 Games</button>
-<button onclick="filter('afbeelding')">🖼️ Afbeeldingen</button>
-</div>
-
-<div class="card">
-
-<img src="https://via.placeholder.com/300x150" width="300">
-
-<h2>📄 Voorbeeld bestand</h2>
-
-<p>Een simpel testbestand.</p><p>Een simpel testbestand.</p>
-<a class="download" href="voorbeeld.txt" download>
-Download
-</div>
-</a>
-</div>
 
 
-<div class="card">
+
+<br>
+
+
+<button onclick="filter('all')">
+📦 Alle
+</button>
+
+<button onclick="filter('script')">
+📜 Scripts
+</button>
+
+<button onclick="filter('game')">
+🎮 Games
+</button>
+
+<button onclick="filter('tool')">
+🛠️ Tools
+</button>
+
+
+
+<div class="card script">
+
+
+<img src="https://via.placeholder.com/300x150">
+
 <h2>📜 Script</h2>
+
 <p>Een handig script bestand.</p>
+
 <a class="download" href="script.txt" download>
 Download
 </a>
-    <p>⬇️ Downloads: 25</p>
+
+
 </div>
 
 
-<div class="card">
+
+
+<div class="card game">
+
+
+<img src="https://via.placeholder.com/300x150">
+
 <h2>🎮 Game bestand</h2>
-<p>Een game bestand.</p>
+
+<p>Een leuk game bestand.</p>
+
 <a class="download" href="game.txt" download>
 Download
 </a>
-</div>
 
 
 </div>
+
+
+
+
+
+<div class="card tool">
+
+
+<img src="https://via.placeholder.com/300x150">
+
+<h2>🛠️ Tool</h2>
+
+<p>Een handige tool.</p>
+
+<a class="download" href="tool.txt" download>
+Download
+</a>
+
+
+</div>
+
+
+
+
+</div>
+
+
+
 
 
 <script>
 
-function donker() {
-    document.body.classList.toggle("dark");
+
+function donker(){
+
+document.body.classList.toggle("dark");
+
 }
 
 
-function zoek() {
-
-let input = document.getElementById("search").value.toLowerCase();
-
-let kaarten = document.getElementsByClassName("card");
 
 
-for(let i = 0; i < kaarten.length; i++){
+function zoek(){
 
-let tekst = kaarten[i].innerText.toLowerCase();
+let input =
+document.getElementById("search").value.toLowerCase();
+
+let kaarten =
+document.getElementsByClassName("card");
+
+
+for(let i=0;i<kaarten.length;i++){
+
+let tekst =
+kaarten[i].innerText.toLowerCase();
 
 
 if(tekst.includes(input)){
-    kaarten[i].style.display = "block";
+
+kaarten[i].style.display="block";
+
 }
+
 else{
-    kaarten[i].style.display = "none";
-}
+
+kaarten[i].style.display="none";
 
 }
 
 }
+
+}
+
+
+
+
+
+function filter(categorie){
+
+let kaarten =
+document.getElementsByClassName("card");
+
+
+for(let i=0;i<kaarten.length;i++){
+
+
+if(categorie=="all" ||
+kaarten[i].classList.contains(categorie)){
+
+
+kaarten[i].style.display="block";
+
+
+}
+
+else{
+
+
+kaarten[i].style.display="none";
+
+
+}
+
+
+}
+
+
+}
+
 
 </script>
 
+
+
+</body>
+
+</html>
 
 </body>
 </html>
