@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - Download Hub</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background: #f2f2f2;
+            padding: 50px;
+        }
+
+        .box {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 400px;
+            margin: auto;
+        }
+
+        input {
+            display: block;
+            margin: 15px auto;
+            padding: 12px;
+            width: 80%;
+        }
+
+        button {
+            background: #007bff;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>🔐 Login</h1>
+
+<input type="text" placeholder="Gebruikersnaam">
+
+<input type="password" placeholder="Wachtwoord">
+
+<button onclick="login()">
+Inloggen
+</button>
+
+<p id="tekst"></p>
+
+</div>
+
+
+<script>
+
+function login(){
+document.getElementById("tekst").innerHTML =
+"Welkom bij Download Hub! 🎉";
+}
+
+</script>
+
+
+</body>
+</html>
