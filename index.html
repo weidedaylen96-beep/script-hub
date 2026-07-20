@@ -3,7 +3,7 @@
 
 <head>
 
-<title>Download Hub | Premium Downloads</title>
+<title>Download Hub</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -11,14 +11,14 @@
 <style>
 
 *{
-margin:0;
-padding:0;
 box-sizing:border-box;
-font-family:Arial, Helvetica, sans-serif;
+font-family:Arial, sans-serif;
 }
 
 
 body{
+
+margin:0;
 
 background:#020617;
 
@@ -29,90 +29,51 @@ overflow-x:hidden;
 }
 
 
-/* Premium achtergrond */
+/* Achtergrond effecten */
 
-.background{
+body:before{
+
+content:"";
 
 position:fixed;
 
-width:100%;
+width:500px;
 
-height:100%;
-
-z-index:-1;
-
-background:
-
-radial-gradient(circle at top left,#2563eb55,transparent 40%),
-
-radial-gradient(circle at bottom right,#9333ea55,transparent 40%),
-
-linear-gradient(135deg,#020617,#111827);
-
-}
-
-
-
-
-.circle{
-
-position:absolute;
-
-border-radius:50%;
-
-filter:blur(90px);
-
-animation:float 10s infinite alternate;
-
-}
-
-
-
-.one{
-
-width:400px;
-
-height:400px;
+height:500px;
 
 background:#2563eb;
 
-top:-100px;
+filter:blur(160px);
 
-left:-100px;
+top:-150px;
+
+left:-150px;
+
+opacity:.5;
 
 }
 
 
 
-.two{
+body:after{
 
-width:350px;
+content:"";
 
-height:350px;
+position:fixed;
+
+width:500px;
+
+height:500px;
 
 background:#9333ea;
 
-right:-100px;
+filter:blur(160px);
 
-bottom:-100px;
+bottom:-150px;
 
-}
+right:-150px;
 
-
-
-@keyframes float{
-
-from{
-
-transform:translateY(0);
-
-}
-
-to{
-
-transform:translateY(80px);
-
-}
+opacity:.5;
 
 }
 
@@ -120,7 +81,7 @@ transform:translateY(80px);
 
 
 
-/* MENU */
+/* Menu */
 
 
 nav{
@@ -135,13 +96,9 @@ transform:translateX(-50%);
 
 width:90%;
 
-max-width:1100px;
-
 padding:18px;
 
 background:rgba(255,255,255,.08);
-
-border:1px solid rgba(255,255,255,.15);
 
 backdrop-filter:blur(20px);
 
@@ -149,7 +106,7 @@ border-radius:25px;
 
 text-align:center;
 
-z-index:20;
+z-index:10;
 
 }
 
@@ -161,11 +118,9 @@ color:white;
 
 text-decoration:none;
 
-margin:15px;
+margin:12px;
 
 font-weight:bold;
-
-transition:.3s;
 
 }
 
@@ -181,12 +136,55 @@ color:#60a5fa;
 
 
 
-/* HERO */
+/* Hero */
 
 
 .hero{
 
-min-height:100vh;
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+padding:30px;
+
+}
+
+
+
+
+
+/* LOGO */
+
+
+.logo{
+
+animation:float 3s infinite alternate;
+
+}
+
+
+
+.logo-icon{
+
+width:100px;
+
+height:100px;
+
+margin:auto;
+
+border-radius:30px;
+
+background:linear-gradient(
+135deg,
+#2563eb,
+#9333ea
+);
 
 display:flex;
 
@@ -194,53 +192,21 @@ align-items:center;
 
 justify-content:center;
 
-text-align:center;
+font-size:55px;
 
-padding:40px;
+box-shadow:
 
-}
-
-
-
-.content{
-
-
-max-width:900px;
-
+0 0 40px #2563eb;
 
 }
 
 
 
-.logo{
+.logo h1{
 
-font-size:90px;
+font-size:75px;
 
-animation:pulse 3s infinite;
-
-}
-
-
-
-@keyframes pulse{
-
-50%{
-
-transform:scale(1.1);
-
-}
-
-}
-
-
-
-
-
-h1{
-
-font-size:85px;
-
-font-weight:900;
+margin:20px 0;
 
 background:linear-gradient(
 90deg,
@@ -257,47 +223,69 @@ color:transparent;
 
 
 
-.hero p{
+.logo p{
 
-font-size:26px;
+font-size:24px;
 
 color:#cbd5e1;
 
-margin-top:20px;
+}
+
+
+
+
+
+@keyframes float{
+
+from{
+
+transform:translateY(0);
+
+}
+
+to{
+
+transform:translateY(-15px);
+
+}
 
 }
 
 
 
-.btn{
+
+
+.button{
 
 display:inline-block;
 
-margin-top:40px;
+margin-top:35px;
 
-padding:18px 50px;
+padding:18px 45px;
 
 border-radius:50px;
 
-background:white;
+background:linear-gradient(
+90deg,
+#2563eb,
+#9333ea
+);
 
-color:#020617;
-
-font-weight:bold;
+color:white;
 
 text-decoration:none;
 
-transition:.4s;
+font-weight:bold;
+
+transition:.3s;
 
 }
 
 
 
-.btn:hover{
+.button:hover{
 
-transform:translateY(-8px);
-
-box-shadow:0 20px 40px #000;
+transform:scale(1.1);
 
 }
 
@@ -305,35 +293,37 @@ box-shadow:0 20px 40px #000;
 
 
 
-/* SECTIES */
+/* Kaarten */
 
 
 .section{
 
-max-width:1200px;
+max-width:1100px;
 
 margin:auto;
 
-padding:80px 30px;
+padding:50px 20px;
 
 }
 
 
 
 
-.glass{
+.box{
 
-background:rgba(255,255,255,.07);
-
-border:1px solid rgba(255,255,255,.15);
+background:rgba(255,255,255,.08);
 
 backdrop-filter:blur(20px);
 
-border-radius:35px;
+padding:40px;
 
-padding:50px;
+border-radius:30px;
+
+border:1px solid rgba(255,255,255,.15);
 
 }
+
+
 
 
 
@@ -341,13 +331,11 @@ padding:50px;
 
 display:flex;
 
-gap:30px;
+gap:25px;
 
 justify-content:center;
 
 flex-wrap:wrap;
-
-margin-top:40px;
 
 }
 
@@ -356,17 +344,15 @@ margin-top:40px;
 
 .card{
 
-width:300px;
+width:280px;
 
-padding:35px;
+background:rgba(255,255,255,.1);
 
-border-radius:30px;
+padding:30px;
 
-background:rgba(255,255,255,.08);
+border-radius:25px;
 
-border:1px solid rgba(255,255,255,.1);
-
-transition:.4s;
+transition:.3s;
 
 }
 
@@ -376,59 +362,12 @@ transition:.4s;
 
 transform:translateY(-15px);
 
-background:rgba(255,255,255,.15);
-
 }
 
 
 
 
-
-.card h2{
-
-font-size:45px;
-
-}
-
-
-
-
-
-.stats{
-
-display:flex;
-
-justify-content:center;
-
-gap:30px;
-
-flex-wrap:wrap;
-
-margin-top:40px;
-
-}
-
-
-
-
-.stat{
-
-width:220px;
-
-padding:30px;
-
-text-align:center;
-
-border-radius:25px;
-
-background:rgba(255,255,255,.08);
-
-}
-
-
-
-
-.stat h2{
+.icon{
 
 font-size:45px;
 
@@ -442,7 +381,7 @@ footer{
 
 text-align:center;
 
-padding:50px;
+padding:40px;
 
 color:#94a3b8;
 
@@ -454,7 +393,7 @@ color:#94a3b8;
 
 @media(max-width:700px){
 
-h1{
+.logo h1{
 
 font-size:45px;
 
@@ -465,30 +404,20 @@ nav a{
 
 display:block;
 
-margin:12px;
+margin:10px;
 
 }
 
 }
-
 
 
 </style>
+
 
 </head>
 
 
 <body>
-
-
-<div class="background">
-
-<div class="circle one"></div>
-
-<div class="circle two"></div>
-
-</div>
-
 
 
 
@@ -511,31 +440,41 @@ margin:12px;
 
 
 
+
+
 <section class="hero">
 
 
-<div class="content">
-
-
 <div class="logo">
-⬡
+
+
+<div class="logo-icon">
+
+⬇
+
 </div>
 
 
+
 <h1>
-DOWNLOAD HUB
+
+Download Hub
+
 </h1>
 
 
+
 <p>
-Een professioneel platform voor digitale downloads, scripts en tools.
+
+Premium platform voor digitale downloads, scripts en tools.
+
 </p>
 
 
 
-<a class="btn" href="downloads.html">
+<a class="button" href="downloads.html">
 
-Ontdek platform
+Bekijk Downloads 🚀
 
 </a>
 
@@ -552,10 +491,11 @@ Ontdek platform
 
 
 
+
 <section class="section">
 
 
-<div class="glass">
+<div class="box">
 
 
 <h2>
@@ -563,18 +503,18 @@ Waarom Download Hub?
 </h2>
 
 
-
 <div class="cards">
+
 
 
 <div class="card">
 
-<h2>⚡</h2>
+<div class="icon">⚡</div>
 
 <h3>Snel</h3>
 
 <p>
-Direct toegang tot jouw bestanden.
+Direct toegang tot bestanden.
 </p>
 
 </div>
@@ -584,12 +524,12 @@ Direct toegang tot jouw bestanden.
 
 <div class="card">
 
-<h2>🔒</h2>
+<div class="icon">🛡️</div>
 
 <h3>Betrouwbaar</h3>
 
 <p>
-Een overzichtelijke digitale omgeving.
+Een moderne en overzichtelijke omgeving.
 </p>
 
 </div>
@@ -599,12 +539,12 @@ Een overzichtelijke digitale omgeving.
 
 <div class="card">
 
-<h2>🚀</h2>
+<div class="icon">🚀</div>
 
-<h3>Modern</h3>
+<h3>Professioneel</h3>
 
 <p>
-Ontworpen voor de toekomst.
+Gebouwd als een echt digitaal platform.
 </p>
 
 </div>
@@ -618,65 +558,6 @@ Ontworpen voor de toekomst.
 
 
 </section>
-
-
-
-
-
-
-
-
-<section class="section">
-
-
-<div class="glass">
-
-
-<h2>
-Platform statistieken
-</h2>
-
-
-
-<div class="stats">
-
-
-<div class="stat">
-
-<h2>100+</h2>
-
-<p>Bestanden</p>
-
-</div>
-
-
-<div class="stat">
-
-<h2>24/7</h2>
-
-<p>Online</p>
-
-</div>
-
-
-<div class="stat">
-
-<h2>∞</h2>
-
-<p>Mogelijkheden</p>
-
-</div>
-
-
-</div>
-
-
-
-</div>
-
-
-</section>
-
 
 
 
@@ -686,14 +567,19 @@ Platform statistieken
 
 <footer>
 
-<h2>Download Hub</h2>
+<h3>⬇ Download Hub</h3>
 
 <p>
-Premium downloads • Moderne ervaring
+Premium Digital Platform
 </p>
 
+<p>
+© 2026 Download Hub
+</p>
 
 </footer>
+
+
 
 
 
