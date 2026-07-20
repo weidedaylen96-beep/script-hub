@@ -7,8 +7,8 @@
     <style>
         body {
             font-family: Arial;
-            text-align: center;
             background: #f2f2f2;
+            text-align: center;
             padding: 40px;
         }
 
@@ -16,22 +16,27 @@
             background: white;
             padding: 30px;
             border-radius: 15px;
-            max-width: 500px;
+            max-width: 700px;
             margin: auto;
+        }
+
+        .item {
+            background: #eee;
+            padding: 15px;
+            margin: 15px;
+            border-radius: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
         }
 
         input {
             padding: 10px;
-            margin: 10px;
+            margin: 5px;
             width: 80%;
-        }
-
-        button {
-            padding: 12px 25px;
-            background: #007bff;
-            color: white;
-            border: none;
-            border-radius: 8px;
         }
     </style>
 
@@ -45,11 +50,42 @@
 
 <p>Welkom eigenaar van Download Hub!</p>
 
-<h3>Nieuwe download toevoegen</h3>
 
-<input type="text" placeholder="Naam bestand">
+<h2>📊 Statistieken</h2>
 
-<input type="text" placeholder="Beschrijving">
+<div class="item">
+📦 Bestanden: 3
+</div>
+
+<div class="item">
+⬇️ Downloads: 45
+</div>
+
+
+<h2>📋 Bestanden</h2>
+
+
+<div class="item">
+📜 Script
+<br>
+<button>✏️ Bewerken</button>
+<button>🗑️ Verwijderen</button>
+</div>
+
+
+<div class="item">
+🎮 Game bestand
+<br>
+<button>✏️ Bewerken</button>
+<button>🗑️ Verwijderen</button>
+</div>
+
+
+<h2>➕ Nieuwe download</h2>
+
+<input placeholder="Naam bestand">
+
+<input placeholder="Beschrijving">
 
 <br>
 
@@ -57,8 +93,9 @@
 Toevoegen
 </button>
 
+
 </div>
 
-</body>
 
+</body>
 </html>
