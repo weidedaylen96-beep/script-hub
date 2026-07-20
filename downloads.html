@@ -7,7 +7,6 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
 <style>
 
 *{
@@ -18,7 +17,6 @@ box-sizing:border-box;
 body{
 
 margin:0;
-
 font-family:Arial,sans-serif;
 
 background:
@@ -29,7 +27,6 @@ rgba(5,8,22,.85)
 url("https://images.unsplash.com/photo-1518770660439-4636190af475");
 
 background-size:cover;
-
 background-attachment:fixed;
 
 color:white;
@@ -40,13 +37,13 @@ color:white;
 
 nav{
 
-background:rgba(255,255,255,.12);
-
-backdrop-filter:blur(15px);
-
 padding:20px;
 
 text-align:center;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(15px);
 
 }
 
@@ -66,27 +63,90 @@ font-weight:bold;
 
 
 
-.container{
-
-max-width:1000px;
-
-margin:auto;
-
-padding:40px 20px;
-
-}
-
-
-
-
-h1{
+header{
 
 text-align:center;
 
-font-size:50px;
+padding:60px 20px;
 
 }
 
+
+
+header h1{
+
+font-size:55px;
+
+}
+
+
+
+.search{
+
+text-align:center;
+
+}
+
+
+.search input{
+
+width:70%;
+
+padding:15px;
+
+border-radius:20px;
+
+border:none;
+
+font-size:18px;
+
+}
+
+
+
+
+
+.categories{
+
+text-align:center;
+
+margin:30px;
+
+}
+
+
+
+.categories button{
+
+padding:12px 20px;
+
+margin:5px;
+
+border:none;
+
+border-radius:20px;
+
+cursor:pointer;
+
+background:#2563eb;
+
+color:white;
+
+}
+
+
+
+
+
+.container{
+
+max-width:1200px;
+
+margin:auto;
+
+padding:30px;
+
+}
 
 
 
@@ -107,15 +167,15 @@ flex-wrap:wrap;
 
 .card{
 
+width:300px;
+
 background:rgba(255,255,255,.12);
 
 backdrop-filter:blur(15px);
 
-padding:30px;
-
 border-radius:25px;
 
-width:300px;
+padding:25px;
 
 border:1px solid rgba(255,255,255,.2);
 
@@ -134,15 +194,59 @@ transform:translateY(-10px);
 
 
 
-img{
+.card img{
 
 width:100%;
+
+height:160px;
+
+object-fit:cover;
 
 border-radius:15px;
 
 }
 
 
+
+.tag{
+
+background:#9333ea;
+
+padding:7px 15px;
+
+border-radius:20px;
+
+}
+
+
+
+.download{
+
+background:#2563eb;
+
+color:white;
+
+padding:12px;
+
+border-radius:15px;
+
+display:block;
+
+text-decoration:none;
+
+margin-top:15px;
+
+text-align:center;
+
+}
+
+
+
+.download:hover{
+
+background:#3b82f6;
+
+}
 
 
 
@@ -155,54 +259,6 @@ padding:12px;
 border-radius:10px;
 
 border:none;
-
-margin-top:10px;
-
-}
-
-
-
-button{
-
-margin-top:15px;
-
-padding:14px 25px;
-
-border:none;
-
-border-radius:15px;
-
-background:#2563eb;
-
-color:white;
-
-font-weight:bold;
-
-cursor:pointer;
-
-width:100%;
-
-}
-
-
-
-button:hover{
-
-background:#3b82f6;
-
-}
-
-
-
-.tag{
-
-background:#9333ea;
-
-padding:8px 15px;
-
-border-radius:20px;
-
-display:inline-block;
 
 }
 
@@ -219,13 +275,14 @@ color:#94a3b8;
 }
 
 
+
 </style>
+
 
 </head>
 
 
 <body>
-
 
 
 
@@ -246,15 +303,102 @@ color:#94a3b8;
 
 
 
+<header>
+
+<h1>📦 Downloads</h1>
+
+<p>
+Vind jouw favoriete bestanden
+</p>
+
+
+</header>
+
+
+
+
+
+<div class="search">
+
+<input 
+id="zoek"
+placeholder="🔍 Zoek downloads..."
+onkeyup="zoeken()">
+
+</div>
+
+
+
+
+
+<div class="categories">
+
+<button>Alles</button>
+
+<button>🎮 Roblox</button>
+
+<button>🛠️ Tools</button>
+
+<button>📜 Scripts</button>
+
+</div>
+
+
+
+
+
 
 
 <div class="container">
 
 
-<h1>📦 Downloads</h1>
+<div class="cards" id="downloads">
 
 
-<div class="cards">
+
+
+
+<div class="card">
+
+
+<span class="tag">
+SCRIPT
+</span>
+
+
+<img src="https://via.placeholder.com/300">
+
+
+
+<h2>📜 Mijn Script</h2>
+
+
+<p>
+Beschrijving van jouw script.
+</p>
+
+
+<p>
+📥 Downloads: <b>0</b>
+</p>
+
+
+<p>
+⭐ Beoordeling: Nog geen
+</p>
+
+
+
+<a class="download" href="jouw-bestand.zip" download>
+
+📥 Download
+
+</a>
+
+
+</div>
+
+
 
 
 
@@ -268,31 +412,34 @@ ROBLOX
 </span>
 
 
-<h2>🎮 Roblox Script</h2>
+<img src="https://via.placeholder.com/300">
 
 
-<img src="https://via.placeholder.com/300x150">
 
+<h2>🎮 Roblox Tool</h2>
 
 
 <p>
-Een handig Roblox script pakket.
+Beschrijving van jouw Roblox bestand.
+</p>
+
+
+<p>
+📥 Downloads: <b>0</b>
+</p>
+
+
+<p>
+⭐ Beoordeling: Nog geen
 </p>
 
 
 
-<input 
-id="naam1"
-placeholder="Jouw Roblox username">
+<a class="download" href="roblox-tool.zip" download>
 
+📥 Download
 
-
-<button onclick="download1()">
-
-📥 Download Script
-
-</button>
-
+</a>
 
 
 </div>
@@ -311,74 +458,34 @@ TOOL
 </span>
 
 
+<img src="https://via.placeholder.com/300">
+
+
+
 <h2>🛠️ Tool Pack</h2>
 
 
-<img src="https://via.placeholder.com/300x150">
-
-
 <p>
-Handige tools voor jouw projecten.
+Handige tools.
 </p>
 
 
-<input 
-id="naam2"
-placeholder="Jouw Roblox username">
-
-
-<button onclick="download2()">
-
-📥 Download Tool
-
-</button>
-
-
-</div>
-
-
-
-
-
-
-<div class="card">
-
-
-<span class="tag">
-GAME
-</span>
-
-
-<h2>🎮 Game Pack</h2>
-
-
-<img src="https://via.placeholder.com/300x150">
-
-
 <p>
-Extra bestanden voor games.
+📥 Downloads: <b>0</b>
 </p>
 
 
-<input 
-id="naam3"
-placeholder="Jouw Roblox username">
-
-
-<button onclick="download3()">
-
-📥 Download Pack
-
-</button>
-
-
-</div>
+<p>
+⭐ Beoordeling: Nog geen
+</p>
 
 
 
+<a class="download" href="tool-pack.zip" download>
 
+📥 Download
 
-</div>
+</a>
 
 
 </div>
@@ -386,13 +493,10 @@ placeholder="Jouw Roblox username">
 
 
 
+</div>
 
+</div>
 
-<footer>
-
-© 2026 Download Hub
-
-</footer>
 
 
 
@@ -402,56 +506,54 @@ placeholder="Jouw Roblox username">
 <script>
 
 
-function controle(naam,bestand){
+function zoeken(){
+
+let input=document
+.getElementById("zoek")
+.value
+.toLowerCase();
 
 
-let user=document.getElementById(naam).value;
+let kaarten=document
+.querySelectorAll(".card");
 
 
-if(user===""){
+kaarten.forEach(function(card){
 
-alert("Vul eerst je Roblox username in!");
 
-return;
+if(card.innerText
+.toLowerCase()
+.includes(input)){
+
+
+card.style.display="block";
+
+
+}else{
+
+
+card.style.display="none";
+
 
 }
 
 
-alert("Bedankt "+user+"! Je download start.");
-
-window.location.href=bestand;
+});
 
 
 }
-
-
-
-
-function download1(){
-
-controle("naam1","roblox-script.zip");
-
-}
-
-
-
-function download2(){
-
-controle("naam2","tool-pack.zip");
-
-}
-
-
-
-function download3(){
-
-controle("naam3","game-pack.zip");
-
-}
-
 
 
 </script>
+
+
+
+
+<footer>
+
+© 2026 Download Hub
+
+</footer>
 
 
 
