@@ -1,713 +1,147 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="nl">
 <head>
-
-<title>Download Hub | Ultimate Creator Platform</title>
-
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<title>Download Hub</title>
 
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
-
-
 body{
-
-background:#020617;
-
-color:white;
-
-overflow-x:hidden;
-
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#0f172a;
+    color:white;
 }
 
-
-/* VIDEO */
-
-.video{
-
-position:fixed;
-
-width:100%;
-
-height:100%;
-
-object-fit:cover;
-
-z-index:-3;
-
+#login{
+    position:fixed;
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#020617;
 }
 
-
-
-.overlay{
-
-position:fixed;
-
-inset:0;
-
-background:
-linear-gradient(
-135deg,
-rgba(2,6,23,.9),
-rgba(0,0,0,.8)
-);
-
-z-index:-2;
-
+.box{
+    width:340px;
+    background:#111827;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 0 30px rgba(0,0,0,.5);
 }
 
-
-
-
-/* GLOW EFFECT */
-
-.glow{
-
-position:fixed;
-
-width:500px;
-
-height:500px;
-
-background:#8b5cf6;
-
-filter:blur(180px);
-
-opacity:.5;
-
-animation:move 8s infinite alternate;
-
-z-index:-1;
-
+input{
+    width:100%;
+    padding:14px;
+    margin:10px 0;
+    border:none;
+    border-radius:10px;
 }
 
-
-
-@keyframes move{
-
-from{
-
-transform:translate(0,0);
-
+button{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    background:#2563eb;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
 }
 
-to{
-
-transform:translate(300px,200px);
-
+#site{
+    display:none;
+    text-align:center;
+    padding:80px 20px;
 }
-
-}
-
-
-
-
-
-
-/* NAV */
-
-nav{
-
-position:fixed;
-
-top:20px;
-
-left:50%;
-
-transform:translateX(-50%);
-
-width:90%;
-
-padding:20px;
-
-background:
-rgba(255,255,255,.1);
-
-backdrop-filter:blur(25px);
-
-border-radius:35px;
-
-border:1px solid #ffffff30;
-
-text-align:center;
-
-z-index:10;
-
-}
-
-
-
-nav a{
-
-color:white;
-
-text-decoration:none;
-
-margin:12px;
-
-font-weight:bold;
-
-}
-
-
-
-nav a:hover{
-
-color:#facc15;
-
-}
-
-
-
-
-
-/* HERO */
-
-
-.hero{
-
-height:100vh;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-text-align:center;
-
-padding:30px;
-
-}
-
-
-
-.logo{
-
-width:160px;
-
-height:160px;
-
-margin:auto;
-
-border-radius:50%;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-font-size:80px;
-
-background:
-linear-gradient(
-135deg,
-#facc15,
-#9333ea,
-#2563eb
-);
-
-box-shadow:
-
-0 0 80px #9333ea;
-
-animation:
-spin 8s linear infinite;
-
-}
-
-
-
-@keyframes spin{
-
-from{
-transform:rotateY(0deg);
-}
-
-to{
-transform:rotateY(360deg);
-}
-
-}
-
-
-
 
 h1{
-
-font-size:90px;
-
-background:
-linear-gradient(
-90deg,
-#facc15,
-#38bdf8,
-#c084fc
-);
-
--webkit-background-clip:text;
-
-color:transparent;
-
-margin-top:30px;
-
+    font-size:50px;
 }
-
-
-
-.hero p{
-
-font-size:25px;
-
-color:#ddd;
-
-}
-
-
-
-
-
-.button{
-
-display:inline-block;
-
-margin:25px 10px;
-
-padding:18px 45px;
-
-border-radius:50px;
-
-text-decoration:none;
-
-font-weight:bold;
-
-transition:.4s;
-
-}
-
-
-
-.gold{
-
-background:
-linear-gradient(
-90deg,
-#facc15,
-#eab308
-);
-
-color:black;
-
-}
-
-
-
-.neon{
-
-background:
-linear-gradient(
-90deg,
-#2563eb,
-#9333ea
-);
-
-color:white;
-
-}
-
-
-
-.button:hover{
-
-transform:
-translateY(-8px)
-scale(1.1);
-
-box-shadow:
-0 0 40px #38bdf8;
-
-}
-
-
-
-
-
-
-/* SECTIONS */
-
-
-.section{
-
-max-width:1300px;
-
-margin:auto;
-
-padding:60px 20px;
-
-}
-
-
-
-
-.cardbox{
-
-background:
-rgba(255,255,255,.08);
-
-backdrop-filter:blur(30px);
-
-border-radius:40px;
-
-padding:45px;
-
-border:
-1px solid #ffffff30;
-
-}
-
-
-
-
-.cards{
-
-display:grid;
-
-grid-template-columns:
-repeat(auto-fit,minmax(250px,1fr));
-
-gap:25px;
-
-margin-top:30px;
-
-}
-
-
-
-
-.card{
-
-padding:30px;
-
-background:
-rgba(255,255,255,.08);
-
-border-radius:30px;
-
-transition:.4s;
-
-text-align:center;
-
-}
-
-
-
-.card:hover{
-
-transform:
-translateY(-15px)
-rotateX(8deg);
-
-box-shadow:
-0 30px 50px black;
-
-}
-
-
-
-.icon{
-
-font-size:60px;
-
-}
-
-
-
-
-/* SHOP */
-
-.product img{
-
-width:100%;
-
-height:200px;
-
-object-fit:cover;
-
-border-radius:25px;
-
-}
-
-
-
-.price{
-
-color:#facc15;
-
-font-size:30px;
-
-font-weight:bold;
-
-}
-
-
-
-
-footer{
-
-text-align:center;
-
-padding:50px;
-
-color:#aaa;
-
-}
-
-
-
-
-
-@media(max-width:700px){
-
-h1{
-
-font-size:45px;
-
-}
-
-
-nav a{
-
-display:block;
-
-margin:8px;
-
-}
-
-
-}
-
-
-
 </style>
 
 </head>
-
-
 <body>
 
+<div id="login">
 
-<video autoplay muted loop class="video">
+<div class="box">
 
-<source src="background.mp4">
+<h2>🔐 Inloggen</h2>
 
-</video>
+<input id="user" placeholder="Gebruikersnaam">
 
+<input id="pass" type="password" placeholder="Wachtwoord">
 
-<div class="overlay"></div>
+<button onclick="login()">Inloggen</button>
 
-<div class="glow"></div>
+<br><br>
 
-
-
-
-
-<nav>
-
-<a href="#">🏠 Home</a>
-
-<a href="shop.html">🛒 Shop</a>
-
-<a href="login.html">🔐 Login</a>
-
-<a href="admin.html">👑 Admin</a>
-
-</nav>
-
-
-
-
-
-
-
-
-<section class="hero">
-
-
-<div>
-
-
-<div class="logo">
-
-🎮
+<button onclick="register()">Nieuw account maken</button>
 
 </div>
 
+</div>
 
+<div id="site">
 
-<h1>
-Download Hub
-</h1>
+<h1>🎮 Download Hub</h1>
 
-
-<p>
-
-De toekomst van gaming creators.<br>
-
-Premium • Futuristic • Professional
-
-</p>
-
-
-
-<a class="button gold" href="shop.html">
-
-🛒 Shop Nu
-
-</a>
-
-
-<a class="button neon" href="login.html">
-
-🔐 Account
-
-</a>
-
+<p>Welkom op de website!</p>
 
 </div>
 
+<script>
 
-</section>
+if(localStorage.getItem("ingelogd")=="ja"){
+    document.getElementById("login").style.display="none";
+    document.getElementById("site").style.display="block";
+}
 
+function register(){
 
+let u=prompt("Kies een gebruikersnaam");
 
+if(!u)return;
 
+let p=prompt("Kies een wachtwoord");
 
+if(!p)return;
 
+localStorage.setItem("username",u);
+localStorage.setItem("password",p);
 
+alert("Account aangemaakt! Log nu in.");
 
-<section class="section">
+}
 
+function login(){
 
-<div class="cardbox">
+let u=document.getElementById("user").value;
 
+let p=document.getElementById("pass").value;
 
-<h2>
-🔥 Waarom wij uniek zijn
-</h2>
+if(
+u==localStorage.getItem("username") &&
+p==localStorage.getItem("password")
+){
 
+localStorage.setItem("ingelogd","ja");
 
-<div class="cards">
+document.getElementById("login").style.display="none";
 
+document.getElementById("site").style.display="block";
 
-<div class="card">
+}else{
 
-<div class="icon">
-🌌
-</div>
+alert("Onjuiste gebruikersnaam of wachtwoord.");
 
-<h3>
-Futuristic
-</h3>
+}
 
-<p>
-Een nieuwe generatie platform.
-</p>
+}
 
-</div>
-
-
-
-<div class="card">
-
-<div class="icon">
-💎
-</div>
-
-<h3>
-Premium
-</h3>
-
-<p>
-Luxe ervaring voor creators.
-</p>
-
-</div>
-
-
-
-<div class="card">
-
-<div class="icon">
-🎮
-</div>
-
-<h3>
-Gaming
-</h3>
-
-<p>
-Gebouwd voor gamers.
-</p>
-
-</div>
-
-
-
-<div class="card">
-
-<div class="icon">
-🚀
-</div>
-
-<h3>
-Future
-</h3>
-
-<p>
-Klaar voor de toekomst.
-</p>
-
-</div>
-
-
-</div>
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-<footer>
-
-<h2>
-🎮 Download Hub
-</h2>
-
-<p>
-Ultimate Creator Marketplace
-</p>
-
-
-</footer>
-
-
+</script>
 
 </body>
-
 </html>
