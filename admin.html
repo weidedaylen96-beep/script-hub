@@ -16,140 +16,105 @@ body {
 
 
 .box {
-
     background:white;
     max-width:900px;
     margin:auto;
     padding:35px;
     border-radius:25px;
     box-shadow:0 10px 30px #ccc;
-
 }
 
 
-
 nav {
-
     margin-bottom:30px;
-
 }
 
 
 nav a {
-
     text-decoration:none;
     margin:10px;
     color:#2563eb;
     font-weight:bold;
-
 }
 
 
-
 .stats {
-
     display:flex;
     justify-content:center;
     gap:20px;
     flex-wrap:wrap;
-
 }
 
 
-
 .stat {
-
     background:#2563eb;
     color:white;
     padding:25px;
     border-radius:20px;
     width:180px;
-
 }
 
 
-
 .card {
-
     background:#f1f5f9;
     padding:20px;
     margin:20px;
     border-radius:15px;
-
 }
-
-
-
-input {
-
-    padding:12px;
-    width:80%;
-    border-radius:10px;
-    border:1px solid #aaa;
-
-}
-
 
 
 button {
-
     padding:12px 25px;
     border:none;
     border-radius:10px;
     cursor:pointer;
-    margin:5px;
-
 }
-
-
-
-.add {
-
-    background:#2563eb;
-    color:white;
-
-}
-
 
 
 .delete {
-
     background:#dc2626;
     color:white;
-
 }
 
 
-</style>
+.add {
+    background:#2563eb;
+    color:white;
+}
 
+
+input {
+    padding:12px;
+    width:80%;
+    border-radius:10px;
+    border:1px solid #aaa;
+}
+
+</style>
 
 </head>
 
 
-
 <body>
-
 
 
 <script>
 
 let wachtwoord = prompt("🔒 Admin wachtwoord:");
 
-if (wachtwoord !== "1234") {
+if (wachtwoord !== "daylenweide12") {
 
 document.body.innerHTML = `
 
 <h1>⛔ Toegang geweigerd</h1>
 
-<p>Je hebt geen toegang tot het Admin Dashboard.</p>
+<p>Verkeerd wachtwoord.</p>
 
 `;
 
 }
 
 </script>
-
-
 
 
 
@@ -166,9 +131,7 @@ document.body.innerHTML = `
 
 
 
-
 <div class="box">
-
 
 
 <h1>👑 Admin Dashboard</h1>
@@ -177,55 +140,36 @@ document.body.innerHTML = `
 
 
 
-
-
 <h2>📊 Statistieken</h2>
-
 
 
 <div class="stats">
 
 
 <div class="stat">
-
 <h2>25</h2>
-
 <p>Bestanden</p>
-
 </div>
 
 
-
 <div class="stat">
-
 <h2>430</h2>
-
 <p>Downloads</p>
-
 </div>
-
 
 
 <div class="stat">
-
 <h2>120</h2>
-
 <p>Bezoekers</p>
-
 </div>
 
 
-
 </div>
-
-
 
 
 
 
 <h2>📦 Bestanden beheren</h2>
-
-
 
 
 <div class="card">
@@ -234,17 +178,11 @@ document.body.innerHTML = `
 
 <p>Handig script bestand</p>
 
-<button>
-✏️ Bewerken
-</button>
+<button>✏️ Bewerken</button>
 
-<button class="delete">
-🗑️ Verwijderen
-</button>
+<button class="delete">🗑️ Verwijderen</button>
 
 </div>
-
-
 
 
 
@@ -254,13 +192,9 @@ document.body.innerHTML = `
 
 <p>Leuk game bestand</p>
 
-<button>
-✏️ Bewerken
-</button>
+<button>✏️ Bewerken</button>
 
-<button class="delete">
-🗑️ Verwijderen
-</button>
+<button class="delete">🗑️ Verwijderen</button>
 
 </div>
 
@@ -268,9 +202,7 @@ document.body.innerHTML = `
 
 
 
-
 <h2>➕ Nieuwe download</h2>
-
 
 
 <div class="card">
@@ -287,11 +219,7 @@ document.body.innerHTML = `
 Toevoegen
 </button>
 
-
 </div>
-
-
-
 
 
 
@@ -304,19 +232,11 @@ Toevoegen
 
 <p>Status: 🟢 Online</p>
 
-<button>
-Opslaan
-</button>
-
-
 </div>
 
 
 
-
-
 </div>
-
 
 
 </body>
