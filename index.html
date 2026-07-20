@@ -3,7 +3,7 @@
 
 <head>
 
-<title>Download Hub Premium</title>
+<title>Download Hub | Ultimate Creator Platform</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -14,7 +14,7 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial, sans-serif;
+font-family:Arial,sans-serif;
 }
 
 
@@ -29,22 +29,36 @@ overflow-x:hidden;
 }
 
 
+/* VIDEO */
 
-/* VIDEO ACHTERGROND */
-
-.video-bg{
+.video{
 
 position:fixed;
 
-right:0;
+width:100%;
 
-bottom:0;
-
-min-width:100%;
-
-min-height:100%;
+height:100%;
 
 object-fit:cover;
+
+z-index:-3;
+
+}
+
+
+
+.overlay{
+
+position:fixed;
+
+inset:0;
+
+background:
+linear-gradient(
+135deg,
+rgba(2,6,23,.9),
+rgba(0,0,0,.8)
+);
 
 z-index:-2;
 
@@ -52,18 +66,24 @@ z-index:-2;
 
 
 
-.dark{
+
+/* GLOW EFFECT */
+
+.glow{
 
 position:fixed;
 
-inset:0;
+width:500px;
 
-background:
+height:500px;
 
-linear-gradient(
-rgba(2,6,23,.75),
-rgba(2,6,23,.95)
-);
+background:#8b5cf6;
+
+filter:blur(180px);
+
+opacity:.5;
+
+animation:move 8s infinite alternate;
 
 z-index:-1;
 
@@ -71,10 +91,28 @@ z-index:-1;
 
 
 
+@keyframes move{
+
+from{
+
+transform:translate(0,0);
+
+}
+
+to{
+
+transform:translate(300px,200px);
+
+}
+
+}
 
 
-/* MENU */
 
+
+
+
+/* NAV */
 
 nav{
 
@@ -88,19 +126,20 @@ transform:translateX(-50%);
 
 width:90%;
 
-padding:18px;
+padding:20px;
 
-background:rgba(255,255,255,.1);
+background:
+rgba(255,255,255,.1);
 
-border:1px solid rgba(255,255,255,.2);
+backdrop-filter:blur(25px);
 
-backdrop-filter:blur(20px);
+border-radius:35px;
 
-border-radius:30px;
+border:1px solid #ffffff30;
 
 text-align:center;
 
-z-index:5;
+z-index:10;
 
 }
 
@@ -112,11 +151,9 @@ color:white;
 
 text-decoration:none;
 
-margin:15px;
+margin:12px;
 
 font-weight:bold;
-
-transition:.3s;
 
 }
 
@@ -124,7 +161,7 @@ transition:.3s;
 
 nav a:hover{
 
-color:#38bdf8;
+color:#facc15;
 
 }
 
@@ -155,28 +192,49 @@ padding:30px;
 
 .logo{
 
-font-size:120px;
+width:160px;
 
-animation:floating 3s infinite alternate;
+height:160px;
 
-filter:drop-shadow(0 0 30px #60a5fa);
+margin:auto;
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:80px;
+
+background:
+linear-gradient(
+135deg,
+#facc15,
+#9333ea,
+#2563eb
+);
+
+box-shadow:
+
+0 0 80px #9333ea;
+
+animation:
+spin 8s linear infinite;
 
 }
 
 
 
-@keyframes floating{
+@keyframes spin{
 
 from{
-
-transform:translateY(0);
-
+transform:rotateY(0deg);
 }
 
 to{
-
-transform:translateY(-25px);
-
+transform:rotateY(360deg);
 }
 
 }
@@ -188,19 +246,21 @@ h1{
 
 font-size:90px;
 
-background:linear-gradient(
+background:
+linear-gradient(
 90deg,
+#facc15,
 #38bdf8,
-#a78bfa,
-#ec4899
+#c084fc
 );
 
 -webkit-background-clip:text;
 
 color:transparent;
 
-}
+margin-top:30px;
 
+}
 
 
 
@@ -208,11 +268,10 @@ color:transparent;
 
 font-size:25px;
 
-color:#cbd5e1;
-
-margin-top:20px;
+color:#ddd;
 
 }
+
 
 
 
@@ -221,7 +280,7 @@ margin-top:20px;
 
 display:inline-block;
 
-margin:30px 10px;
+margin:25px 10px;
 
 padding:18px 45px;
 
@@ -231,15 +290,31 @@ text-decoration:none;
 
 font-weight:bold;
 
-transition:.3s;
+transition:.4s;
 
 }
 
 
 
-.primary{
+.gold{
 
-background:linear-gradient(
+background:
+linear-gradient(
+90deg,
+#facc15,
+#eab308
+);
+
+color:black;
+
+}
+
+
+
+.neon{
+
+background:
+linear-gradient(
 90deg,
 #2563eb,
 #9333ea
@@ -251,21 +326,14 @@ color:white;
 
 
 
-.secondary{
-
-background:white;
-
-color:#020617;
-
-}
-
-
-
 .button:hover{
 
-transform:scale(1.1);
+transform:
+translateY(-8px)
+scale(1.1);
 
-box-shadow:0 0 30px #38bdf8;
+box-shadow:
+0 0 40px #38bdf8;
 
 }
 
@@ -274,13 +342,12 @@ box-shadow:0 0 30px #38bdf8;
 
 
 
-
-/* KAARTEN */
+/* SECTIONS */
 
 
 .section{
 
-max-width:1200px;
+max-width:1300px;
 
 margin:auto;
 
@@ -290,31 +357,34 @@ padding:60px 20px;
 
 
 
-.box{
 
-background:rgba(255,255,255,.1);
+.cardbox{
 
-border:1px solid rgba(255,255,255,.2);
+background:
+rgba(255,255,255,.08);
 
-backdrop-filter:blur(25px);
+backdrop-filter:blur(30px);
 
 border-radius:40px;
 
-padding:40px;
+padding:45px;
+
+border:
+1px solid #ffffff30;
 
 }
 
 
 
+
 .cards{
 
-display:flex;
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
 
 gap:25px;
-
-flex-wrap:wrap;
-
-justify-content:center;
 
 margin-top:30px;
 
@@ -322,19 +392,19 @@ margin-top:30px;
 
 
 
-.card{
 
-width:280px;
+.card{
 
 padding:30px;
 
-background:rgba(255,255,255,.08);
+background:
+rgba(255,255,255,.08);
 
-border-radius:25px;
-
-text-align:center;
+border-radius:30px;
 
 transition:.4s;
+
+text-align:center;
 
 }
 
@@ -342,7 +412,12 @@ transition:.4s;
 
 .card:hover{
 
-transform:translateY(-15px) scale(1.03);
+transform:
+translateY(-15px)
+rotateX(8deg);
+
+box-shadow:
+0 30px 50px black;
 
 }
 
@@ -350,11 +425,38 @@ transform:translateY(-15px) scale(1.03);
 
 .icon{
 
-font-size:55px;
+font-size:60px;
 
 }
 
 
+
+
+/* SHOP */
+
+.product img{
+
+width:100%;
+
+height:200px;
+
+object-fit:cover;
+
+border-radius:25px;
+
+}
+
+
+
+.price{
+
+color:#facc15;
+
+font-size:30px;
+
+font-weight:bold;
+
+}
 
 
 
@@ -365,7 +467,7 @@ text-align:center;
 
 padding:50px;
 
-color:#94a3b8;
+color:#aaa;
 
 }
 
@@ -375,29 +477,11 @@ color:#94a3b8;
 
 @media(max-width:700px){
 
-
 h1{
 
 font-size:45px;
 
 }
-
-
-
-.hero p{
-
-font-size:18px;
-
-}
-
-
-
-.logo{
-
-font-size:70px;
-
-}
-
 
 
 nav a{
@@ -409,12 +493,11 @@ margin:8px;
 }
 
 
-
 }
 
 
-</style>
 
+</style>
 
 </head>
 
@@ -422,16 +505,16 @@ margin:8px;
 <body>
 
 
+<video autoplay muted loop class="video">
 
-<video autoplay muted loop class="video-bg">
-
-<source src="background.mp4" type="video/mp4">
+<source src="background.mp4">
 
 </video>
 
 
-<div class="dark"></div>
+<div class="overlay"></div>
 
+<div class="glow"></div>
 
 
 
@@ -439,25 +522,13 @@ margin:8px;
 
 <nav>
 
-<a href="index.html">
-🏠 Home
-</a>
+<a href="#">🏠 Home</a>
 
+<a href="shop.html">🛒 Shop</a>
 
-<a href="shop.html">
-🛒 Shop
-</a>
+<a href="login.html">🔐 Login</a>
 
-
-<a href="downloads.html">
-📦 Downloads
-</a>
-
-
-<a href="contact.html">
-📩 Contact
-</a>
-
+<a href="admin.html">👑 Admin</a>
 
 </nav>
 
@@ -475,8 +546,11 @@ margin:8px;
 
 
 <div class="logo">
+
 🎮
+
 </div>
+
 
 
 <h1>
@@ -486,28 +560,26 @@ Download Hub
 
 <p>
 
-De premium plek voor creators.<br>
+De toekomst van gaming creators.<br>
 
-Ontdek unieke producten, downloads en meer.
+Premium • Futuristic • Professional
 
 </p>
 
 
 
-<a class="button primary" href="shop.html">
+<a class="button gold" href="shop.html">
 
-🛒 Naar Shop
-
-</a>
-
-
-
-<a class="button secondary" href="login.html">
-
-🔐 Login
+🛒 Shop Nu
 
 </a>
 
+
+<a class="button neon" href="login.html">
+
+🔐 Account
+
+</a>
 
 
 </div>
@@ -525,13 +597,12 @@ Ontdek unieke producten, downloads en meer.
 <section class="section">
 
 
-<div class="box">
+<div class="cardbox">
 
 
 <h2>
-Waarom iedereen ons gebruikt 🔥
+🔥 Waarom wij uniek zijn
 </h2>
-
 
 
 <div class="cards">
@@ -540,19 +611,18 @@ Waarom iedereen ons gebruikt 🔥
 <div class="card">
 
 <div class="icon">
-⚡
+🌌
 </div>
 
 <h3>
-Snel
+Futuristic
 </h3>
 
 <p>
-Direct toegang tot producten.
+Een nieuwe generatie platform.
 </p>
 
 </div>
-
 
 
 
@@ -567,11 +637,28 @@ Premium
 </h3>
 
 <p>
-Een moderne ervaring.
+Luxe ervaring voor creators.
 </p>
 
 </div>
 
+
+
+<div class="card">
+
+<div class="icon">
+🎮
+</div>
+
+<h3>
+Gaming
+</h3>
+
+<p>
+Gebouwd voor gamers.
+</p>
+
+</div>
 
 
 
@@ -582,11 +669,11 @@ Een moderne ervaring.
 </div>
 
 <h3>
-Creator Ready
+Future
 </h3>
 
 <p>
-Gemaakt voor gamers.
+Klaar voor de toekomst.
 </p>
 
 </div>
@@ -605,6 +692,7 @@ Gemaakt voor gamers.
 
 
 
+
 <footer>
 
 <h2>
@@ -612,7 +700,7 @@ Gemaakt voor gamers.
 </h2>
 
 <p>
-Premium Creator Marketplace
+Ultimate Creator Marketplace
 </p>
 
 
