@@ -2,94 +2,252 @@
 <html>
 
 <head>
-    <title>Admin - Download Hub</title>
 
-    <style>
-        body {
-            font-family: Arial;
-            background: #f2f2f2;
-            text-align: center;
-            padding: 40px;
-        }
+<title>Admin Dashboard - Download Hub</title>
 
-        .box {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            max-width: 700px;
-            margin: auto;
-        }
+<style>
 
-        .item {
-            background: #eee;
-            padding: 15px;
-            margin: 15px;
-            border-radius: 10px;
-        }
+body {
+    font-family: Arial, sans-serif;
+    background:#f5f7fb;
+    text-align:center;
+    padding:40px;
+}
 
-        button {
-            padding: 10px 20px;
-            border-radius: 8px;
-            cursor: pointer;
-        }
 
-        input {
-            padding: 10px;
-            margin: 5px;
-            width: 80%;
-        }
-    </style>
+.box {
+
+    background:white;
+    max-width:900px;
+    margin:auto;
+    padding:35px;
+    border-radius:25px;
+    box-shadow:0 10px 30px #ccc;
+
+}
+
+
+nav {
+
+    margin-bottom:30px;
+
+}
+
+
+nav a {
+
+    text-decoration:none;
+    margin:10px;
+    color:#2563eb;
+    font-weight:bold;
+
+}
+
+
+
+.stats {
+
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+
+}
+
+
+
+.stat {
+
+    background:#2563eb;
+    color:white;
+    padding:25px;
+    border-radius:20px;
+    width:180px;
+
+}
+
+
+
+.card {
+
+    background:#f1f5f9;
+    padding:20px;
+    margin:20px;
+    border-radius:15px;
+
+}
+
+
+
+button {
+
+    padding:10px 20px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    margin:5px;
+
+}
+
+
+
+.add {
+
+    background:#2563eb;
+    color:white;
+
+}
+
+
+
+.delete {
+
+    background:#dc2626;
+    color:white;
+
+}
+
+
+
+</style>
 
 </head>
 
+
+
 <body>
+
+
+
+<nav>
+
+<a href="index.html">🏠 Home</a>
+
+<a href="downloads.html">📦 Downloads</a>
+
+<a href="profiel.html">👤 Profiel</a>
+
+</nav>
+
+
+
 
 <div class="box">
 
+
+
 <h1>👑 Admin Dashboard</h1>
 
-<p>Welkom eigenaar van Download Hub!</p>
+<p>Welkom eigenaar van Download Hub 🚀</p>
+
+
 
 
 <h2>📊 Statistieken</h2>
 
-<div class="item">
-📦 Bestanden: 3
-</div>
 
-<div class="item">
-⬇️ Downloads: 45
-</div>
+<div class="stats">
 
 
-<h2>📋 Bestanden</h2>
+<div class="stat">
 
+<h2>25</h2>
 
-<div class="item">
-📜 Script
-<br>
-<button>✏️ Bewerken</button>
-<button>🗑️ Verwijderen</button>
+<p>Bestanden</p>
+
 </div>
 
 
-<div class="item">
-🎮 Game bestand
-<br>
-<button>✏️ Bewerken</button>
-<button>🗑️ Verwijderen</button>
+<div class="stat">
+
+<h2>430</h2>
+
+<p>Downloads</p>
+
 </div>
+
+
+<div class="stat">
+
+<h2>120</h2>
+
+<p>Bezoekers</p>
+
+</div>
+
+
+</div>
+
+
+
+
+
+<h2>📦 Bestanden beheren</h2>
+
+
+
+<div class="card">
+
+<h3>📜 Script</h3>
+
+<p>Handig script bestand</p>
+
+<button>
+✏️ Bewerken
+</button>
+
+<button class="delete">
+🗑️ Verwijderen
+</button>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h3>🎮 Game bestand</h3>
+
+<p>Leuk game bestand</p>
+
+
+<button>
+✏️ Bewerken
+</button>
+
+<button class="delete">
+🗑️ Verwijderen
+</button>
+
+
+</div>
+
+
+
+
 
 
 <h2>➕ Nieuwe download</h2>
 
+
+<div class="card">
+
+
 <input placeholder="Naam bestand">
+
+<br><br>
+
 
 <input placeholder="Beschrijving">
 
-<br>
 
-<button>
+<br><br>
+
+
+<button class="add">
 Toevoegen
 </button>
 
@@ -97,5 +255,35 @@ Toevoegen
 </div>
 
 
+
+
+
+
+<h2>⚙️ Instellingen</h2>
+
+
+<div class="card">
+
+<p>Website naam: Download Hub</p>
+
+<p>Status: 🟢 Online</p>
+
+<button>
+Opslaan
+</button>
+
+
+</div>
+
+
+
+
+
+
+</div>
+
+
+
 </body>
+
 </html>
