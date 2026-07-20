@@ -3,7 +3,7 @@
 
 <head>
 
-<title>Download Hub Shop</title>
+<title>Download Hub Gaming Shop</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -20,63 +20,22 @@ body{
 
 margin:0;
 
-background:#020617;
-
 color:white;
 
-overflow-x:hidden;
+background:
 
-}
+linear-gradient(
+rgba(2,6,23,.85),
+rgba(2,6,23,.95)
+),
 
+url("https://images.unsplash.com/photo-1593642632823-8f785ba67e45");
 
-/* Achtergrond */
+background-size:cover;
 
-body:before{
+background-position:center;
 
-content:"";
-
-position:fixed;
-
-width:500px;
-
-height:500px;
-
-background:#2563eb;
-
-filter:blur(160px);
-
-top:-150px;
-
-left:-150px;
-
-opacity:.5;
-
-z-index:-1;
-
-}
-
-
-body:after{
-
-content:"";
-
-position:fixed;
-
-width:500px;
-
-height:500px;
-
-background:#9333ea;
-
-filter:blur(160px);
-
-right:-150px;
-
-bottom:-150px;
-
-opacity:.5;
-
-z-index:-1;
+background-attachment:fixed;
 
 }
 
@@ -99,7 +58,7 @@ width:90%;
 
 padding:18px;
 
-background:rgba(255,255,255,.08);
+background:rgba(255,255,255,.1);
 
 backdrop-filter:blur(20px);
 
@@ -126,7 +85,6 @@ font-weight:bold;
 }
 
 
-
 nav a:hover{
 
 color:#60a5fa;
@@ -137,7 +95,7 @@ color:#60a5fa;
 
 
 
-/* Titel */
+/* Header */
 
 
 .hero{
@@ -156,9 +114,9 @@ font-size:70px;
 
 background:linear-gradient(
 90deg,
-#60a5fa,
-#a78bfa,
-#f472b6
+#22d3ee,
+#8b5cf6,
+#ec4899
 );
 
 -webkit-background-clip:text;
@@ -181,7 +139,7 @@ color:#cbd5e1;
 
 
 
-/* Producten */
+/* Shop */
 
 
 .container{
@@ -196,13 +154,14 @@ padding:30px;
 
 
 
+
 .products{
 
 display:flex;
 
-justify-content:center;
-
 gap:30px;
+
+justify-content:center;
 
 flex-wrap:wrap;
 
@@ -210,22 +169,21 @@ flex-wrap:wrap;
 
 
 
-
 .product{
 
 width:300px;
 
-background:rgba(255,255,255,.08);
+padding:30px;
+
+background:rgba(255,255,255,.1);
 
 backdrop-filter:blur(20px);
 
 border-radius:30px;
 
-padding:35px;
+border:1px solid rgba(255,255,255,.2);
 
-border:1px solid rgba(255,255,255,.15);
-
-transition:.4s;
+transition:.3s;
 
 text-align:center;
 
@@ -237,17 +195,33 @@ text-align:center;
 
 transform:translateY(-15px);
 
-}
-
-
-
-
-.product-icon{
-
-font-size:60px;
+box-shadow:0 20px 50px black;
 
 }
 
+
+
+.image{
+
+height:170px;
+
+border-radius:25px;
+
+background:linear-gradient(
+135deg,
+#2563eb,
+#9333ea
+);
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:70px;
+
+}
 
 
 
@@ -256,9 +230,9 @@ font-size:60px;
 
 font-size:35px;
 
-font-weight:bold;
+color:#22d3ee;
 
-color:#60a5fa;
+font-weight:bold;
 
 margin:20px;
 
@@ -266,31 +240,9 @@ margin:20px;
 
 
 
-
-.tag{
-
-display:inline-block;
-
-background:linear-gradient(
-90deg,
-#2563eb,
-#9333ea
-);
-
-padding:8px 18px;
-
-border-radius:20px;
-
-}
-
-
-
-
 .buy{
 
 display:block;
-
-margin-top:25px;
 
 padding:15px;
 
@@ -304,8 +256,6 @@ text-decoration:none;
 
 font-weight:bold;
 
-transition:.3s;
-
 }
 
 
@@ -318,22 +268,15 @@ transform:scale(1.05);
 
 
 
+.tag{
 
-.info{
+display:inline-block;
 
-max-width:1000px;
+background:#ec4899;
 
-margin:70px auto;
+padding:8px 15px;
 
-padding:40px;
-
-background:rgba(255,255,255,.08);
-
-backdrop-filter:blur(20px);
-
-border-radius:30px;
-
-text-align:center;
+border-radius:20px;
 
 }
 
@@ -350,7 +293,6 @@ padding:40px;
 color:#94a3b8;
 
 }
-
 
 
 
@@ -388,15 +330,15 @@ margin:10px;
 
 <nav>
 
-<a href="index.html">Home</a>
+<a href="index.html">🏠 Home</a>
 
-<a href="downloads.html">Downloads</a>
+<a href="downloads.html">📦 Downloads</a>
 
-<a href="shop.html">Shop</a>
+<a href="shop.html">🛒 Shop</a>
 
-<a href="contact.html">Contact</a>
+<a href="contact.html">📩 Contact</a>
 
-<a href="login.html">Login</a>
+<a href="admin.html">👑 Admin</a>
 
 </nav>
 
@@ -408,13 +350,14 @@ margin:10px;
 
 <section class="hero">
 
+
 <h1>
-🛒 Download Hub Shop
+🎮 Gaming Creator Shop
 </h1>
 
 
 <p>
-Premium digitale producten en scripts
+Premium gaming designs, assets en creator packs
 </p>
 
 
@@ -437,34 +380,33 @@ Premium digitale producten en scripts
 
 <div class="product">
 
-
 <span class="tag">
-PREMIUM
+HOT
 </span>
 
 
-<div class="product-icon">
-📜
+<div class="image">
+⌨️
 </div>
 
 
 <h2>
-Script Pack
+Neon Keyboard Pack
 </h2>
 
 
 <p>
-Een verzameling handige scripts.
+Een futuristisch keyboard design voor gamers.
 </p>
 
 
 <div class="price">
-€4,99
+€2,99
 </div>
 
 
 <a class="buy" href="contact.html">
-Kopen
+🛒 Kopen
 </a>
 
 
@@ -481,32 +423,32 @@ Kopen
 
 
 <span class="tag">
-POPULAIR
+NEW
 </span>
 
 
-<div class="product-icon">
+<div class="image">
 🎮
 </div>
 
 
 <h2>
-Game Pack
+Avatar Design Pack
 </h2>
 
 
 <p>
-Extra tools en bestanden.
+Unieke designs voor jouw projecten.
 </p>
 
 
 <div class="price">
-€9,99
+€1,99
 </div>
 
 
 <a class="buy" href="contact.html">
-Kopen
+🛒 Kopen
 </a>
 
 
@@ -523,32 +465,32 @@ Kopen
 
 
 <span class="tag">
-NIEUW
+PRO
 </span>
 
 
-<div class="product-icon">
+<div class="image">
 🚀
 </div>
 
 
 <h2>
-Developer Pack
+Creator Bundle
 </h2>
 
 
 <p>
-Tools voor projecten.
+Een pakket met meerdere digitale items.
 </p>
 
 
 <div class="price">
-€14,99
+€7,99
 </div>
 
 
 <a class="buy" href="contact.html">
-Kopen
+🛒 Kopen
 </a>
 
 
@@ -558,30 +500,11 @@ Kopen
 
 
 
-</div>
-
 
 </div>
 
 
-
-
-
-
-
-<div class="info">
-
-<h2>
-🔒 Veilig bestellen
-</h2>
-
-<p>
-Neem contact op voor informatie over producten en bestellingen.
-</p>
-
-
 </div>
-
 
 
 
@@ -596,11 +519,7 @@ Neem contact op voor informatie over producten en bestellingen.
 </h3>
 
 <p>
-Premium Digital Platform
-</p>
-
-<p>
-© 2026 Download Hub
+Gaming Creator Marketplace
 </p>
 
 
