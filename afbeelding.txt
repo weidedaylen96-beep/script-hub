@@ -1,1 +1,2 @@
 Dit is mijn afbeelding bestand!
+<div class="card afbeelding">
