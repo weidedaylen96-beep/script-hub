@@ -53,7 +53,22 @@
     </style>
 </head>
 
-<body>
+<script>
+function zoek() {
+    let input = document.getElementById("search").value.toLowerCase();
+    let kaarten = document.getElementsByClassName("card");
+
+    for (let i = 0; i < kaarten.length; i++) {
+        let tekst = kaarten[i].innerText.toLowerCase();
+
+        if (tekst.includes(input)) {
+            kaarten[i].style.display = "block";
+        } else {
+            kaarten[i].style.display = "none";
+        }
+    }
+}
+</script>
 
 <nav>
     <a href="index.html">🏠 Home</a>
