@@ -11,20 +11,38 @@
             padding: 40px;
         }
 
+        nav {
+            margin-bottom: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            margin: 10px;
+            color: #007bff;
+            font-weight: bold;
+        }
+
         .box {
             background: white;
-            padding: 25px;
+            padding: 30px;
             border-radius: 15px;
-            max-width: 500px;
+            max-width: 700px;
             margin: auto;
         }
 
+        .card {
+            background: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px;
+        }
+
         .download {
-            display: block;
+            display: inline-block;
             background: #007bff;
             color: white;
-            padding: 12px;
-            margin: 10px;
+            padding: 10px 20px;
             border-radius: 8px;
             text-decoration: none;
         }
@@ -34,6 +52,8 @@
         }
     </style>
 </head>
+
+<body>
 
 <nav>
     <a href="index.html">🏠 Home</a>
@@ -45,27 +65,28 @@
 
 <h1>📦 Downloads</h1>
 
-<p>Kies iets om op te halen:</p>
+<div class="card">
+    <h2>📄 Voorbeeld bestand</h2>
+    <p>Een simpel bestand om te testen.</p>
+    <a class="download" href="voorbeeld.txt" download>Download</a>
+</div>
 
-<a class="download" href="voorbeeld.txt" download>
-📄 Voorbeeld bestand
-</a>
+<div class="card">
+    <h2>📜 Script</h2>
+    <p>Een handig script bestand.</p>
+    <a class="download" href="script.txt" download>Download</a>
+</div>
 
-<a class="download" href="script.txt" download>
-📜 Script
-</a>
+<div class="card">
+    <h2>🎮 Game bestand</h2>
+    <p>Een bestand voor games.</p>
+    <a class="download" href="game.txt" download>Download</a>
+</div>
 
-<a class="download" href="game.txt" download>
-🎮 Game bestand
-</a>
+</div>
 
-<a class="download" href="afbeelding.txt" download>
-🖼️ Afbeelding
-</a>
-
-<br>
-
-<a href="index.html">🏠 Terug naar Home</a>
+</body>
+</html>
 
 </div>
 
