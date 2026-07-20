@@ -27,6 +27,7 @@ body {
 }
 
 
+
 nav {
 
     margin-bottom:30px;
@@ -79,9 +80,20 @@ nav a {
 
 
 
+input {
+
+    padding:12px;
+    width:80%;
+    border-radius:10px;
+    border:1px solid #aaa;
+
+}
+
+
+
 button {
 
-    padding:10px 20px;
+    padding:12px 25px;
     border:none;
     border-radius:10px;
     cursor:pointer;
@@ -108,14 +120,36 @@ button {
 }
 
 
-
 </style>
+
 
 </head>
 
 
 
 <body>
+
+
+
+<script>
+
+let wachtwoord = prompt("🔒 Admin wachtwoord:");
+
+if (wachtwoord !== "1234") {
+
+document.body.innerHTML = `
+
+<h1>⛔ Toegang geweigerd</h1>
+
+<p>Je hebt geen toegang tot het Admin Dashboard.</p>
+
+`;
+
+}
+
+</script>
+
+
 
 
 
@@ -132,6 +166,7 @@ button {
 
 
 
+
 <div class="box">
 
 
@@ -143,7 +178,9 @@ button {
 
 
 
+
 <h2>📊 Statistieken</h2>
+
 
 
 <div class="stats">
@@ -158,6 +195,7 @@ button {
 </div>
 
 
+
 <div class="stat">
 
 <h2>430</h2>
@@ -165,6 +203,7 @@ button {
 <p>Downloads</p>
 
 </div>
+
 
 
 <div class="stat">
@@ -176,13 +215,16 @@ button {
 </div>
 
 
+
 </div>
 
 
 
 
 
+
 <h2>📦 Bestanden beheren</h2>
+
 
 
 
@@ -200,7 +242,6 @@ button {
 🗑️ Verwijderen
 </button>
 
-
 </div>
 
 
@@ -213,7 +254,6 @@ button {
 
 <p>Leuk game bestand</p>
 
-
 <button>
 ✏️ Bewerken
 </button>
@@ -221,7 +261,6 @@ button {
 <button class="delete">
 🗑️ Verwijderen
 </button>
-
 
 </div>
 
@@ -233,19 +272,16 @@ button {
 <h2>➕ Nieuwe download</h2>
 
 
-<div class="card">
 
+<div class="card">
 
 <input placeholder="Naam bestand">
 
 <br><br>
 
-
 <input placeholder="Beschrijving">
 
-
 <br><br>
-
 
 <button class="add">
 Toevoegen
@@ -264,7 +300,7 @@ Toevoegen
 
 <div class="card">
 
-<p>Website naam: Download Hub</p>
+<p>Website: Download Hub</p>
 
 <p>Status: 🟢 Online</p>
 
@@ -274,7 +310,6 @@ Opslaan
 
 
 </div>
-
 
 
 
